@@ -21,7 +21,6 @@ const router = createBrowserRouter(
       <Route path="education" element={<Education />} />          
       <Route path="feedback" element={<Feedback />} />           
     </Route>
-
   )
 );
 
