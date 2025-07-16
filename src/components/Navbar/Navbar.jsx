@@ -23,7 +23,6 @@ const Navbar = () => {
   return (
     <div className="bg-[#1A1A1A] text-white sticky top-0 z-50 shadow-md w-full">
       <div className="navbar max-w-7xl mx-auto px-4">
-        {/* Left Logo */}
         <div className="navbar-start">
           <NavLink to="/" title="Let's bring a change" className="flex items-center">
             <img
@@ -34,7 +33,6 @@ const Navbar = () => {
           </NavLink>
         </div>
 
-        {/* Desktop Menu */}
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1 text-base gap-1">
             {navLinks.map((link) => (
@@ -52,7 +50,6 @@ const Navbar = () => {
               </li>
             ))}
 
-            {/* More Dropdown */}
             <li tabIndex={0}>
               <details>
                 <summary className="text-[#D7CCC8] hover:text-[#5C6BC0]">More</summary>
@@ -75,7 +72,6 @@ const Navbar = () => {
           </ul>
         </div>
 
-        {/* Right Menu Button */}
         <div className="navbar-end lg:hidden">
           <button onClick={() => setMenuOpen(!menuOpen)} className="text-[#5C6BC0]">
             {menuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -83,7 +79,6 @@ const Navbar = () => {
         </div>
       </div>
 
-      {/* Mobile Dropdown */}
       {menuOpen && (
         <div className="lg:hidden bg-[#1A1A1A] px-4 pt-2 pb-4 space-y-2 text-base">
           {navLinks.map((link) => (
