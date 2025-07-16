@@ -119,12 +119,12 @@ export default function HomePage() {
           </div>
         </div>
         <div>
-          <img src={hero} alt="Hero" className="w-full rounded-xl shadow-lg" />
+          <img src={hero} alt="Hero" className="cursor-grab w-full rounded-xl shadow-lg" />
         </div>
       </section>
 
       <section className="text-center my-10">
-        <blockquote className="italic text-[#90A4AE] text-lg max-w-3xl mx-auto">
+        <blockquote className="italic text-[#90A4AE] text-lg max-w-3xl mx-auto cursor-crosshair">
           "An apple fall from the tree and Isaac Newton discovered gravity.<br/>Thousands of Palestinians fall and no one has discovered Humanity."
         </blockquote>
         <Link to="/about" className="block mt-4 text-[#5C6BC0] hover:underline">
@@ -134,7 +134,7 @@ export default function HomePage() {
       
       <section className="my-20 grid md:grid-cols-3 gap-10">
         <div className="text-center">
-          <img src={feature1} title= "Feature 1" alt="Boycott Companies" className="w-full h-80 object-cover rounded-lg mb-4" />
+          <img src={feature1} title= "Feature 1" alt="Boycott Companies" className="cursor-grab w-full h-80 object-cover rounded-lg mb-4" />
           <h3 className="text-xl font-semibold text-[#5C6BC0]">Boycott Lookup</h3>
           <p className="mt-2 text-[#B0BEC5]">Search for unethical companies and see ethical alternatives on broad basis.</p>
           <Link to="/boycott" className="inline-block mt-3 text-[#D7CCC8] hover:text-[#5C6BC0] font-medium">
@@ -143,7 +143,7 @@ export default function HomePage() {
         </div>
 
         <div className="text-center">
-          <img src={feature2} title= "Feature 2" alt="Protest Mail" className="w-full h-80 object-cover rounded-lg mb-4" />
+          <img src={feature2} title= "Feature 2" alt="Protest Mail" className="cursor-grab w-full h-80 object-cover rounded-lg mb-4" />
           <h3 className="text-xl font-semibold text-[#5C6BC0]">One-Click Mail</h3>
           <p className="mt-2 text-[#B0BEC5]">Send powerful pre-written proposal emails to decision-makers.</p>
           <Link to="/mailprotest" className="inline-block mt-3 text-[#D7CCC8] hover:text-[#5C6BC0] font-medium">
@@ -152,7 +152,7 @@ export default function HomePage() {
         </div>
 
         <div className="text-center">
-          <img src={feature3} title= "Feature 3" alt="Suggest" className="w-full h-80 object-cover rounded-lg mb-4" />
+          <img src={feature3} title= "Feature 3" alt="Suggest" className="cursor-grab w-full h-80 object-cover rounded-lg mb-4" />
           <h3 className="text-xl font-semibold text-[#5C6BC0]">Suggest better alternatives detailed</h3>
           <p className="mt-2 text-[#B0BEC5]">A B2B feature that suggests ethical alternatives to reduce dependency on unethical companies.</p>
           <Link to="/suggestions" className="inline-block mt-3 text-[#D7CCC8] hover:text-[#5C6BC0] font-medium">
