@@ -20,7 +20,7 @@ function Counter({ target, duration = 1000 }) {
           setHasAnimated(true); 
         }
       },
-      { threshold: 0.5 } 
+      { threshold: 0.9 } 
     );
 
     if (counterRef.current) {
