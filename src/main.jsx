@@ -9,6 +9,8 @@ import Boycott from './components/Boycott/Boycott.jsx';
 import Donate from './components/Donate/Donate.jsx';
 import Education from './components/Education/Education.jsx';
 import Feedback from './components/Feedback/Feedback.jsx';
+import MailProtest from './components/MailProtest/MailProtest.jsx';
+import Suggestions from './components/Suggestions/Suggestions.jsx';
 import './index.css';
 
 const router = createBrowserRouter(
@@ -19,7 +21,9 @@ const router = createBrowserRouter(
       <Route path="boycott" element={<Boycott />} />             
       <Route path="donate" element={<Donate />} />                
       <Route path="education" element={<Education />} />          
-      <Route path="feedback" element={<Feedback />} />           
+      <Route path="feedback" element={<Feedback />} />   
+      <Route path="mailprotest" element={<MailProtest />} />
+      <Route path="suggestions" element={<Suggestions />} />           
     </Route>
   )
 );
