@@ -74,8 +74,8 @@ const Boycott = () => {
           </button>
         </form>
 
-        <p className="text-[#D7CCC8] text-sm italic mb-6">
-          Search for a boycotted company, the reason for boycott, and safer alternatives.
+        <p className="text-[#D7CCC8] text-xs italic mb-6">
+          Search for a boycotted company, the reason for boycott, and safer alternatives<br/>Kindly wait, since our API is deployed on free tier, it may take a while.
         </p>
 
         {error && <div className="text-red-400 font-medium mt-4">{error}</div>}
@@ -112,15 +112,13 @@ const Boycott = () => {
                   <div className="prose prose-invert text-sm text-[#D7CCC8] max-w-none">
                     <ReactMarkdown>
                       {result.data.description
-                        .replace(/\[\^.*?\]:*/g, "") // remove reference tags
-                        .replace(/(https?:\/\/[^\s]+)/g, "") // remove ref link from description
+                        .replace(/\[\^.*?\]:*/g, "") 
+                        .replace(/(https?:\/\/[^\s]+)/g, "") 
                       }
                     </ReactMarkdown>
                     <a href={result.data.description.
                       slice(result.data.description.search(/(https?:\/\/[^\s]+)/g))}
-                      // render ref link here
                       className="text-indigo-300 bg-slate-700 p-2 inline-block mt-2 rounded  hover:bg-slate-700/70 transition-all duration-200"
-                      // bhailog edit the style as needed
                     >
                       Reference
                     </a>
