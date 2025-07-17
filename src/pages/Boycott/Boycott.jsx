@@ -177,10 +177,10 @@ const Boycott = () => {
             <div>
               <h2 className="text-2xl font-bold text-[#5C6BC0] mb-2">Why Boycott?</h2>
               <p className="text-[#D7CCC8] text-sm sm:text-base leading-relaxed">
-                Some companies fund or support systems that contribute to the suffering of innocent people, innocent children, old people and women. Choose not to support these companies till they stop their unethical practices in the genocide.
+                Some companies fund or support systems that contribute to the suffering of innocent civilians including children, old people and women. Choose not to support these companies till they stop their unethical practices in the genocide.
               </p>
               <p className="text-[#D7CCC8] text-sm sm:text-base leading-relaxed mt-2">
-                This tool helps you make informed choices by identifying brands linked to injustice and offering more ethical alternatives, so your money aligns with your values.
+                This tool helps you make informed choices by identifying brands linked to injustice using authentic references and offering more ethical alternatives, so your money doesn't fund the genocide.
               </p>
             </div>
 
