@@ -3,14 +3,14 @@ import ReactDOM from 'react-dom/client';
 import { RouterProvider, createBrowserRouter, Route, createRoutesFromElements } from 'react-router-dom';
 import App from './App.jsx';
 import Layout from './Layout.jsx';
-import Home from './components/Home/Home.jsx';
-import About from './components/About/About.jsx';
-import Boycott from './components/Boycott/Boycott.jsx';
-import Donate from './components/Donate/Donate.jsx';
-import Education from './components/Education/Education.jsx';
-import Feedback from './components/Feedback/Feedback.jsx';
-import MailProtest from './components/MailProtest/MailProtest.jsx';
-import Suggestions from './components/Suggestions/Suggestions.jsx';
+import Home from './pages/Home/Home.jsx';
+import About from './pages/About/About.jsx';
+import Boycott from './pages/Boycott/Boycott.jsx';
+import Donate from './pages/Donate/Donate.jsx';
+import Education from './pages/Education/Education.jsx';
+import Feedback from './pages/Feedback/Feedback.jsx';
+import MailProtest from './pages/MailProtest/MailProtest.jsx';
+import Suggestions from './pages/Suggestions/Suggestions.jsx';
 import './index.css';
 
 const router = createBrowserRouter(

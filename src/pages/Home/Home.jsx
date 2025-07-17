@@ -4,7 +4,7 @@ import hero from '../../assets/hero.gif';
 import feature1 from '../../assets/feature1.png';
 import feature2 from '../../assets/feature2.png';
 import feature3 from '../../assets/feature3.png';
-import PalestineTimeline from '../PalestineTimeline/PalestineTimeline.jsx';
+import PalestineTimeline from '../../components/PalestineTimeline/PalestineTimeline.jsx';
 
 function Counter({ target, duration = 1000 }) {
   const [count, setCount] = useState(0);
