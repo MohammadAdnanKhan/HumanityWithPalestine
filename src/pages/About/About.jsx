@@ -8,7 +8,7 @@ import {
 const About = () => {
   return (
     <div className="bg-base-100 text-white px-4 md:px-16 py-10 space-y-20">
-      <h1 className="text-5xl font-bold text-left text-[#5C6BC0] mb-10 tinos-bold">
+      <h1 className="text-5xl font-bold text-center text-[#5C6BC0] mb-10 tinos-bold">
         Who We Are and Why We Stand for Palestine
       </h1>
 
@@ -113,31 +113,7 @@ const About = () => {
 <iframe width="560" height="315" src="https://www.youtube.com/embed/rfbvaN2coVo?si=ya9NhmD2YcDLJKe6" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
       </div>
 
-      <div className="space-y-12">
-        {[1, 2, 3, 4].map((_, index) => (
-          <div
-            key={index}
-            className={`flex flex-col md:flex-row items-center ${index % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
-              } gap-8`}
-          >
-            <img
-              src="https://cielhr.com/wp-content/uploads/2020/10/dummy-image.jpg"
-              alt={`Member ${index + 1}`}
-              className="w-60 h-60 object-cover rounded-xl border-2 border-[#90A4AE]"
-            />
-            <div className="text-[#90A4AE]">
-              <h3 className="text-2xl font-bold text-white mb-2 tinos-bold">
-                Member {index + 1}
-              </h3>
-              <p className="text-xl">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla
-                accumsan, metus ultrices eleifend gravida, nulla nunc varius
-                lectus.
-              </p>
-            </div>
-          </div>
-        ))}
-      </div>
+
 
       <div className="text-center space-y-4">
         <h2 className="text-2xl font-bold text-white tinos-bold">Connect with us</h2>
