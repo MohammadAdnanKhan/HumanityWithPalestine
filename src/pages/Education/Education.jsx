@@ -2,7 +2,7 @@ import React from "react";
 
 function Education() {
   return (
-    <div className="min-h-screen bg-[#2A2A2A] text-[#D7CCC8] px-4 py-12 md:px-20 space-y-10">
+    <div className="min-h-screen text-[#D7CCC8] px-4 py-12 md:px-20 space-y-10">
       <h1 className="text-4xl tinos-bold text-[#5C6BC0] mb-6">
         Education Page
       </h1>
