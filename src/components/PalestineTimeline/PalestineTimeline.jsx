@@ -30,11 +30,11 @@ const PalestineTimeline = () => {
   return (
     <div className="min-h-screen text-white font-sans px-4">
       <header className="text-center py-10">
-        <h1 className="text-4xl font-bold text-[#5C6BC0]">Key Events in Palestinian History</h1>
-        <p className="text-gray-400 mt-2">From 1917 to Present</p>
+        <h1 className="text-4xl font-bold text-[#5C6BC0] font-serif">Key Events in Palestinian History</h1>
+        <p className="text-gray-400 mt-2 font-mono">From 1917 to Present</p>
       </header>
 
-      <div className="max-w-md mx-auto mb-10">
+      <div className="max-w-md mx-auto font-mono mb-10">
         <select
           onChange={(e) => setSelectedDecade(e.target.value)}
           value={selectedDecade}
@@ -49,13 +49,13 @@ const PalestineTimeline = () => {
         <div className="border-l-4 border-[#5C6BC0] ml-4">
           {filteredEvents.map((event, index) => (
             <div key={index} className="mb-10 ml-6 relative">
-              <span className="flex absolute -left-4 top-1 justify-center items-center w-8 h-8 bg-[#5C6BC0] rounded-full ring-4 ring-[#1A1A1A]">
+              <span className="flex absolute -left-5 top-1 font-serif justify-center items-center w-8 h-8 bg-[#5C6BC0] rounded-full ring-4 ring-[#1A1A1A]">
                 <span className="text-sm font-bold text-white">{event.year}</span>
               </span>
 
               <div className="bg-[#2A2A2A] border border-[#90A4AE] rounded-lg p-4 shadow">
-                <h3 className="text-lg font-semibold text-[#5C6BC0]">{event.title}</h3>
-                <p className="text-gray-300 mt-2">{event.description}</p>
+                <h3 className="text-lg font-serif font-semibold text-[#5C6BC0]">{event.title}</h3>
+                <p className="text-gray-300 font-mono mt-2">{event.description}</p>
               </div>
             </div>
           ))}

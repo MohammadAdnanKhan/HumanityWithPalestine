@@ -21,7 +21,7 @@ const Navbar = () => {
   ];
 
   return (
-    <div className="bg-[#1A1A1A] text-white sticky top-0 z-50 shadow-md w-full">
+    <div className="bg-[#1A1A1A] text-white font-serif sticky top-0 z-50 shadow-md w-full">
       <div className="navbar max-w-7xl mx-auto px-4">
         <div className="navbar-start">
           <NavLink to="/" title="Let's bring a change" className="flex items-center">
