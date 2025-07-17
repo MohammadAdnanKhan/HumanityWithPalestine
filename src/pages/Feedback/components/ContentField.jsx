@@ -1,6 +1,6 @@
 export default function ContentField({ formData, setFormData }) {
   return (
-    <>
+    <div class="font-mono">
       <div>
         <label className="block text-sm font-medium text-blue-200">
           Affected company or product
@@ -77,7 +77,7 @@ export default function ContentField({ formData, setFormData }) {
         </label>
         <input
           type="text"
-          placeholder="http://example.com"
+          placeholder="https://example.com"
           value={formData.contentIss.link}
           onChange={(e) =>
             setFormData(
@@ -93,6 +93,6 @@ export default function ContentField({ formData, setFormData }) {
           required
         />
       </div>
-    </>
+    </div>
   )
 }

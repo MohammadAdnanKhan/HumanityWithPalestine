@@ -15,7 +15,7 @@ export default function UiField({ formData, setFormData }) {
   ];
 
   return (
-    <>
+    <div class="font-mono">
       <div>
         <label className="block text-sm font-medium text-blue-200">
           What were you trying to do?
@@ -75,7 +75,7 @@ export default function UiField({ formData, setFormData }) {
               }
             )}
           required
-          className="mt-1 w-full px-3 py-2 border rounded-md bg-zinc-50 text-gray-800"
+          className="mt-1 w-full px-3 py-2 font-mono border rounded-md bg-zinc-50 text-gray-800"
         >
           <option value="">Select a type</option>
           {browsers.map((b) => (
@@ -84,6 +84,6 @@ export default function UiField({ formData, setFormData }) {
           <option value="Other">Other</option>
         </select>
       </div>
-    </>
+    </div>
   )
 }

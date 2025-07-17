@@ -85,21 +85,21 @@ function Feedback() {
   return (
     <div className="min-h-[80vh] flex items-center justify-center p-6">
       <div className="bg-zinc-700/80 p-8 rounded-lg shadow-sm shadow-zinc-300 w-full max-w-md">
-        <h1 className="text-2xl font-bold text-gray-100 mb-4">
+        <h1 className="text-2xl font-serif font-bold text-gray-100 mb-4">
           {page === 2 ? category : 'We value your feedback'}
         </h1>
 
         {page === 1 && (
           <form onSubmit={handleNext} className="space-y-4">
             <div>
-              <label className="block text-sm font-medium text-blue-200">
+              <label className="block text-sm font-mono font-medium text-blue-200">
                 What type of feedback is this?
               </label>
               <select
                 value={category}
                 onChange={(e) => setCategory(e.target.value)}
                 required
-                className="mt-1 block w-full px-3 py-2 border rounded-md bg-zinc-50 text-gray-800"
+                className="mt-5 block font-mono w-full px-3 py-2 border rounded-md bg-zinc-50 text-gray-800"
               >
                 <option value="">Select a category</option>
                 <option value="Content Issue">Content Issue</option>
@@ -112,9 +112,9 @@ function Feedback() {
 
             <button
               type="submit"
-              className="w-full bg-[#5C6BC0] text-white py-2 px-4 rounded-md hover:bg-[#5C6BC0]/80 transition"
+              className="w-full font-mono bg-[#5C6BC0] text-white py-2 px-4 rounded-md hover:bg-[#5C6BC0]/80 transition"
             >
-              Next ➡️
+              Next 
             </button>
           </form>
         )}
@@ -122,23 +122,24 @@ function Feedback() {
         {page === 2 && (
           <form onSubmit={handleSubmit} className="space-y-4">
             <div>
-              <label className="block text-sm font-medium text-blue-200">
+              <label className="block font-mono text-sm font-medium text-blue-200">
                 Name
               </label>
               <input
                 type="text"
+                placeholder="Your Name"
                 value={formData.name}
                 onChange={(e) =>
                   setFormData({ ...formData, name: e.target.value })
                 }
-                className="mt-1 w-full px-3 py-2 border rounded-md bg-zinc-50 text-gray-800"
+                className="mt-1 w-full font-mono px-3 py-2 border rounded-md bg-zinc-50 text-gray-800"
                 required
               />
             </div>
 
             <div>
-              <label className="block text-sm font-medium text-blue-200">
-                Email (optional)
+              <label className="block text-sm font-mono font-medium text-blue-200">
+                Email
               </label>
               <input
                 type="email"
@@ -147,10 +148,10 @@ function Feedback() {
                   setFormData({ ...formData, email: e.target.value })
                 }
                 className="mt-1 w-full px-3 py-2 border rounded-md bg-zinc-50 text-gray-800"
+                required
               />
             </div>
 
-            {/* Dynamic Section */}
             {category === 'Content Issue' &&
               <ContentField formData={formData} setFormData={setFormData} />}
 
@@ -166,7 +167,7 @@ function Feedback() {
             {category === 'Other' && (
               <>
                 <div>
-                  <label className="block text-sm font-medium text-blue-200">
+                  <label className="block text-sm font-mono font-medium text-blue-200">
                     Feel free to provide us with your insightful feedback
                   </label>
                   <textarea
@@ -182,7 +183,7 @@ function Feedback() {
                           }
                         }
                       )}
-                    className="mt-1 w-full px-3 py-2 border rounded-md bg-zinc-50 text-gray-800"
+                    className="mt-1 w-full font-mono px-3 py-2 border rounded-md bg-zinc-50 text-gray-800"
                     rows={4}
                     required
                   />
@@ -192,25 +193,25 @@ function Feedback() {
 
             <button
               type="submit"
-              className="w-full bg-[#57b560] text-white py-2 px-4 rounded-md hover:bg-[#57b560]/80 transition"
+              className="w-full bg-[#D7CCC8] font-mono text-black py-2 px-4 rounded-md hover:bg-[#5C6BC0]/80 transition"
             >
               Submit Feedback
             </button>
             <button
               type="button"
               onClick={() => setPage(1)}
-              className="w-full bg-[#5C6BC0] text-white py-2 px-4 rounded-md hover:bg-[#5C6BC0]/80 transition"
+              className="w-full bg-[#5C6BC0] font-mono text-white py-2 px-4 rounded-md hover:bg-[#5C6BC0]/80 transition"
             >
-              ⬅️ Change category
+              Change category
             </button>
           </form>
         )}
 
         {page === 3 && (
-          <p className="text-green-600 font-medium">
-            ✅ Thank you{formData.name
+          <p className="text-green-600 font-serif font-medium">
+             Thank you{formData.name
               ? <span>
-                <span>,</span>
+                <span>, </span>
                 <span className=''>{formData.name}</span>
               </span>
               : ''} for your feedback!

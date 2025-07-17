@@ -1,6 +1,6 @@
 export default function TrustField({ formData, setFormData }) {
   return (
-    <>
+    <div className="font-mono">
       <div>
         <label className="block text-sm font-medium text-blue-200">
           Which company/product?
@@ -49,7 +49,7 @@ export default function TrustField({ formData, setFormData }) {
         </label>
         <input
           type="text"
-          placeholder="http://example.com"
+          placeholder="https://example.com"
           value={formData.trustConcern.link}
           onChange={(e) =>
             setFormData(
@@ -65,6 +65,6 @@ export default function TrustField({ formData, setFormData }) {
           required
         />
       </div>
-    </>
+    </div>
   )
 }
