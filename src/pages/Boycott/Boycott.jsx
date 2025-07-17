@@ -1,5 +1,6 @@
 import { useState } from "react";
 import ReactMarkdown from "react-markdown";
+import { capitalise } from './utils';
 
 const Boycott = () => {
   const [query, setQuery] = useState("");
@@ -111,12 +112,18 @@ const Boycott = () => {
                   <div className="prose prose-invert text-sm text-[#D7CCC8] max-w-none">
                     <ReactMarkdown>
                       {result.data.description
-                        .replace(/\[\^.*?\]/g, "") // remove reference tags
-                        .replace(
-                          /(https?:\/\/[^\s]+)/g,
-                          (url) => `[${url}](${url})`
-                        )}
+                        .replace(/\[\^.*?\]:*/g, "") // remove reference tags
+                        .replace(/(https?:\/\/[^\s]+)/g, "") // remove ref link from description
+                      }
                     </ReactMarkdown>
+                    <a href={result.data.description.
+                      slice(result.data.description.search(/(https?:\/\/[^\s]+)/g))}
+                      // render ref link here
+                      className="text-indigo-300 bg-slate-700 p-2 inline-block mt-2 rounded  hover:bg-slate-700/70 transition-all duration-200"
+                      // bhailog edit the style as needed
+                    >
+                      Reference
+                    </a>
                   </div>
                 )}
 
@@ -136,40 +143,40 @@ const Boycott = () => {
                 )}
 
                 <div className="text-xs text-[#90A4AE]">
-                  Category: {result.data.categories} | Countries:{" "}
-                  {result.data.countries}
+                  {result.data.categories && `Category: ${capitalise(result.data.categories)} | `}
+                  {result.data.countries && `Countries: ${capitalise(result.data.countries)}`}
                 </div>
               </div>
             )}
           </div>
         )}
       </div>
-        {!result && !loading && (
-          <div className="mt-12 bg-[#2A2A2A] border border-[#90A4AE] rounded-2xl p-6 shadow-lg space-y-6 text-left">
+      {!result && !loading && (
+        <div className="mt-12 bg-[#2A2A2A] border border-[#90A4AE] rounded-2xl p-6 shadow-lg space-y-6 text-left">
           <div>
             <h2 className="text-2xl font-bold text-[#5C6BC0] mb-2">Why Boycott?</h2>
-              <p className="text-[#D7CCC8] text-sm sm:text-base leading-relaxed">
-                Some companies fund or support systems that contribute to the suffering of innocent people, innocent children, old people and women. Choose not to support these companies till they stop their unethical practices in the genocide.
-              </p>
-              <p className="text-[#D7CCC8] text-sm sm:text-base leading-relaxed mt-2">
-                This tool helps you make informed choices by identifying brands linked to injustice and offering more ethical alternatives, so your money aligns with your values.
-              </p>
+            <p className="text-[#D7CCC8] text-sm sm:text-base leading-relaxed">
+              Some companies fund or support systems that contribute to the suffering of innocent people, innocent children, old people and women. Choose not to support these companies till they stop their unethical practices in the genocide.
+            </p>
+            <p className="text-[#D7CCC8] text-sm sm:text-base leading-relaxed mt-2">
+              This tool helps you make informed choices by identifying brands linked to injustice and offering more ethical alternatives, so your money aligns with your values.
+            </p>
           </div>
 
-      <div>
-        <h3 className="text-lg font-semibold text-[#90A4AE] mb-2">Try Searching:</h3>
-        <ul className="grid grid-cols-2 sm:grid-cols-3 gap-x-6 gap-y-2 text-[#D7CCC8] text-sm list-none">
-          {["Starbucks", "Google", "McDonald's", "Intel", "Nestlé", "Amazon"].map((brand, idx) => (
-            <li key={idx} className="before:content-['🔍'] before:mr-2">{brand}</li>
-          ))}
-        </ul>
-      </div>
+          <div>
+            <h3 className="text-lg font-semibold text-[#90A4AE] mb-2">Try Searching:</h3>
+            <ul className="grid grid-cols-2 sm:grid-cols-3 gap-x-6 gap-y-2 text-[#D7CCC8] text-sm list-none">
+              {["Starbucks", "Google", "McDonald's", "Intel", "Nestlé", "Amazon"].map((brand, idx) => (
+                <li key={idx} className="before:content-['🔍'] before:mr-2">{brand}</li>
+              ))}
+            </ul>
+          </div>
 
-      <div className="bg-[#1A1A1A] border border-[#5C6BC0] rounded-xl p-4 text-sm text-[#90A4AE] italic">
-        This project is part of a global movement to support justice and human rights through conscious consumer action.
-      </div>
-    </div>
-  )}
+          <div className="bg-[#1A1A1A] border border-[#5C6BC0] rounded-xl p-4 text-sm text-[#90A4AE] italic">
+            This project is part of a global movement to support justice and human rights through conscious consumer action.
+          </div>
+        </div>
+      )}
 
     </div>
   );
