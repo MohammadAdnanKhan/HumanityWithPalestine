@@ -87,62 +87,75 @@ const Boycott = () => {
                 <p className="text-[#D7CCC8] text-lg">{result.result}</p>
               </div>
             ) : (
-              <div className="bg-[#2A2A2A] border border-[#90A4AE] rounded-lg p-6 shadow-lg space-y-4 text-left">
-                <div className="flex items-center gap-4">
-                  {result.data.logo_url && (
-                    <img
-                      src={result.data.logo_url}
-                      alt={result.data.name}
-                      className="h-12 w-12 object-contain"
-                    />
+              <div
+                className="relative rounded-lg overflow-hidden border border-[#90A4AE] shadow-lg"
+                style={{
+                  backgroundImage: `url('https://www.amnesty.org/en/wp-content/uploads/2024/12/GettyImages-2182380031-scaled-e1733253256526-1468x710.jpg')`,
+                  backgroundSize: 'cover',
+                  backgroundPosition: 'center',
+                }}
+              >
+                <div className="absolute inset-0 bg-black bg-opacity-60 backdrop-blur-sm" />
+
+                <div className="relative z-10 p-6 space-y-4 text-left">
+                  <div className="flex items-center gap-4">
+                    {result.data.logo_url && (
+                      <img
+                        src={result.data.logo_url}
+                        alt={result.data.name}
+                        className="h-12 w-12 object-contain bg-white rounded p-1"
+                      />
+                    )}
+                    <h2 className="text-2xl font-semibold text-[#5C6BC0]">
+                      {result.data.name}
+                    </h2>
+                  </div>
+
+                  <p className="text-sm text-[#90A4AE]">
+                    <strong>Status:</strong>{" "}
+                    <span className="capitalize text-red-400">
+                      {result.data.status}
+                    </span>
+                  </p>
+
+                  {result.data.description && (
+                    <div className="prose prose-invert text-sm text-[#D7CCC8] max-w-none">
+                      <ReactMarkdown>
+                        {result.data.description
+                          .replace(/\[\^.*?\]:*/g, "") 
+                          .replace(/(https?:\/\/[^\s]+)/g, "") 
+                        }
+                      </ReactMarkdown>
+                      <a
+                        href={result.data.description.slice(
+                          result.data.description.search(/(https?:\/\/[^\s]+)/g)
+                        )}
+                        className="text-indigo-300 bg-slate-700 p-2 inline-block mt-2 rounded hover:bg-slate-700/70 transition-all duration-200"
+                      >
+                        Reference
+                      </a>
+                    </div>
                   )}
-                  <h2 className="text-2xl font-semibold text-[#5C6BC0]">
-                    {result.data.name}
-                  </h2>
-                </div>
 
-                <p className="text-sm text-[#90A4AE]">
-                  <strong>Status:</strong>{" "}
-                  <span className="capitalize text-red-400">
-                    {result.data.status}
-                  </span>
-                </p>
+                  {result.data.alternatives_text && (
+                    <div>
+                      <h3 className="text-[#90A4AE] font-medium mb-1">
+                        Alternatives:
+                      </h3>
+                      <ul className="list-disc list-inside text-sm text-[#D7CCC8]">
+                        {result.data.alternatives_text
+                          .split("\n")
+                          .map((alt, index) => (
+                            <li key={index}>{alt}</li>
+                          ))}
+                      </ul>
+                    </div>
+                  )}
 
-                {result.data.description && (
-                  <div className="prose prose-invert text-sm text-[#D7CCC8] max-w-none">
-                    <ReactMarkdown>
-                      {result.data.description
-                        .replace(/\[\^.*?\]:*/g, "") 
-                        .replace(/(https?:\/\/[^\s]+)/g, "") 
-                      }
-                    </ReactMarkdown>
-                    <a href={result.data.description.
-                      slice(result.data.description.search(/(https?:\/\/[^\s]+)/g))}
-                      className="text-indigo-300 bg-slate-700 p-2 inline-block mt-2 rounded  hover:bg-slate-700/70 transition-all duration-200"
-                    >
-                      Reference
-                    </a>
+                  <div className="text-xs text-[#90A4AE]">
+                    {result.data.categories && `Category: ${capitalise(result.data.categories)} | `}
+                    {result.data.countries && `Countries: ${capitalise(result.data.countries)}`}
                   </div>
-                )}
-
-                {result.data.alternatives_text && (
-                  <div>
-                    <h3 className="text-[#90A4AE] font-medium mb-1">
-                      Alternatives:
-                    </h3>
-                    <ul className="list-disc list-inside text-sm text-[#D7CCC8]">
-                      {result.data.alternatives_text
-                        .split("\n")
-                        .map((alt, index) => (
-                          <li key={index}>{alt}</li>
-                        ))}
-                    </ul>
-                  </div>
-                )}
-
-                <div className="text-xs text-[#90A4AE]">
-                  {result.data.categories && `Category: ${capitalise(result.data.categories)} | `}
-                  {result.data.countries && `Countries: ${capitalise(result.data.countries)}`}
                 </div>
               </div>
             )}
@@ -150,28 +163,40 @@ const Boycott = () => {
         )}
       </div>
       {!result && !loading && (
-        <div className="mt-12 bg-[#2A2A2A] border border-[#90A4AE] rounded-2xl p-6 shadow-lg space-y-6 text-left">
-          <div>
-            <h2 className="text-2xl font-bold text-[#5C6BC0] mb-2">Why Boycott?</h2>
-            <p className="text-[#D7CCC8] text-sm sm:text-base leading-relaxed">
-              Some companies fund or support systems that contribute to the suffering of innocent people, innocent children, old people and women. Choose not to support these companies till they stop their unethical practices in the genocide.
-            </p>
-            <p className="text-[#D7CCC8] text-sm sm:text-base leading-relaxed mt-2">
-              This tool helps you make informed choices by identifying brands linked to injustice and offering more ethical alternatives, so your money aligns with your values.
-            </p>
-          </div>
+        <div
+          className="mt-12 lg:ml-20 lg:mr-20 md:ml-10 md:ml-10 relative rounded-2xl overflow-hidden border border-[#90A4AE] shadow-lg"
+          style={{
+            backgroundImage: `url('https://www.transcend.org/tms/wp-content/uploads/2024/08/gaza-israel-genocide-palestine-30.jpg')`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+          }}
+        >
+          <div className="absolute inset-0 bg-black bg-opacity-60 backdrop-blur-sm" />
 
-          <div>
-            <h3 className="text-lg font-semibold text-[#90A4AE] mb-2">Try Searching:</h3>
-            <ul className="grid grid-cols-2 sm:grid-cols-3 gap-x-6 gap-y-2 text-[#D7CCC8] text-sm list-none">
-              {["Starbucks", "Google", "McDonald's", "Intel", "Nestlé", "Amazon"].map((brand, idx) => (
-                <li key={idx} className="before:content-['🔍'] before:mr-2">{brand}</li>
-              ))}
-            </ul>
-          </div>
+          <div className="relative z-10 p-6 space-y-6 text-left">
+            <div>
+              <h2 className="text-2xl font-bold text-[#5C6BC0] mb-2">Why Boycott?</h2>
+              <p className="text-[#D7CCC8] text-sm sm:text-base leading-relaxed">
+                Some companies fund or support systems that contribute to the suffering of innocent people, innocent children, old people and women. Choose not to support these companies till they stop their unethical practices in the genocide.
+              </p>
+              <p className="text-[#D7CCC8] text-sm sm:text-base leading-relaxed mt-2">
+                This tool helps you make informed choices by identifying brands linked to injustice and offering more ethical alternatives, so your money aligns with your values.
+              </p>
+            </div>
 
-          <div className="bg-[#1A1A1A] border border-[#5C6BC0] rounded-xl p-4 text-sm text-[#90A4AE] italic">
-            This project is part of a global movement to support justice and human rights through conscious consumer action.
+            <div>
+              <h3 className="text-lg font-semibold text-[#90A4AE] mb-2">Try Searching:</h3>
+              <ul className="grid grid-cols-2 sm:grid-cols-3 gap-x-6 gap-y-2 text-[#D7CCC8] text-sm list-none">
+                {["Starbucks", "Google", "Microsoft", "Intel", "Loreal", "Amazon"].map((brand, idx) => (
+                  <li key={idx} className="before:content-['🔍'] before:mr-2">{brand}</li>
+                ))}
+              </ul>
+            </div>
+
+            <div className="bg-[#1A1A1A] border border-[#5C6BC0] rounded-xl p-4 text-sm text-[#90A4AE] italic">
+              
+              This project is part of a global movement to support justice and human rights through conscious consumer action.
+            </div>
           </div>
         </div>
       )}
