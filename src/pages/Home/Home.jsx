@@ -99,7 +99,7 @@ export default function HomePage() {
     return () => clearTimeout(timeout);
   }, [charIndex, isDeleting, phraseIndex, phrases]);
   return (
-    <div className="min-h-screen text-[#F5F5F5] px-4 md:px-2 lg:px-4">
+    <div className="min-h-screen text-[#F5F5F5] px-10 md:px-5 lg:px-10">
       <section className="grid md:grid-cols-2 gap-10 items-center py-6">
         <div>
           <h2 title="TagLines" className="text-4xl md:text-5xl font-bold text-[#5C6BC0] leading-tight h-24">
