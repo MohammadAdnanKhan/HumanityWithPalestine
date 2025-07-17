@@ -14,7 +14,7 @@ const About = () => {
 
       <div className="flex justify-center">
         <img
-          src="https://www.leftvoice.org/wp-content/uploads/2021/10/palestine.jpeg"
+          src="https://i.guim.co.uk/img/media/070a48f58b985f23c9b5d38719ae508c04ede0e2/0_133_4000_2400/master/4000.jpg?width=620&dpr=2&s=none&crop=none"
           alt="Palestine"
           className="rounded-lg max-w-full"
         />
