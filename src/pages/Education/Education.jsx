@@ -1,11 +1,468 @@
-import React from 'react'
+import React from "react";
 
 function Education() {
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100">
-      <h1 className="text-3xl font-semibold text-gray-800">Education Page</h1>
-    </div>      
-  )
+    <div className="min-h-screen bg-[#2A2A2A] text-[#D7CCC8] px-4 py-12 md:px-20 space-y-10">
+      <h1 className="text-4xl tinos-bold text-[#5C6BC0] mb-6">
+        Education Page
+      </h1>
+
+      <p className="text-base leading-relaxed">
+        So we know that there are many people who are unaware of what’s
+        happening in Palestine and the reality behind the situation. Through
+        this page, we aim to provide brief, accessible context about key events
+        that have shaped this ongoing crisis.
+      </p>
+
+      {/* Balfour Declaration */}
+      <section className="card border border-[#90A4AE] bg-[#2A2A2A] shadow-xl">
+        <div className="card-body">
+          <h2 className="card-title text-[#5C6BC0] tinos-bold text-2xl">
+            The Balfour Declaration
+          </h2>
+          <p className="text-base leading-relaxed">
+            Issued on November 2, 1917, the Balfour Declaration marked a
+            turning point for Palestinians. In this public letter, British
+            Foreign Secretary Arthur James Balfour pledged support for “a
+            national home for the Jewish people” in Palestine—without consulting
+            the indigenous Arab majority, who made up over 90% of the
+            population.
+            <br />
+            <br />
+            While the declaration vaguely promised not to prejudice the rights
+            of non-Jewish communities, the British mandate was structured in a
+            way that enabled and empowered Jewish immigration and political
+            self-rule, while marginalizing Palestinian Arabs. It is widely
+            viewed as a catalyst for the 1948 Nakba and the ongoing Israeli-Palestinian conflict.
+            <br />
+            <br />
+            ➤{" "}
+            <a
+              href="https://www.aljazeera.com/features/2018/11/2/more-than-a-century-on-the-balfour-declaration-explained"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[#5C6BC0] underline"
+            >
+              Read more on Al Jazeera
+            </a>
+          </p>
+        </div>
+      </section>
+
+      {/* UN Partition Plan */}
+      <section className="card border border-[#90A4AE] bg-[#2A2A2A] shadow-xl">
+        <div className="card-body">
+          <h2 className="card-title text-[#5C6BC0] tinos-bold text-2xl">
+            The UN Partition Plan (Resolution 181)
+          </h2>
+          <p className="text-base leading-relaxed">
+            In 1947, facing mounting tensions and pressure to withdraw from
+            Palestine, Britain referred the issue to the United Nations. The UN
+            formed a committee (UNSCOP) to find a solution. The majority
+            recommendation was to divide Palestine into two independent states:
+            one Jewish and one Arab, with Jerusalem placed under international
+            governance.
+            <br />
+            <br />
+            The Jewish community supported this plan, seeing it as a legal
+            foundation for the state of Israel. In contrast, the Arab
+            population—and surrounding Arab nations—rejected it entirely,
+            asserting that it violated the rights of the native majority.
+            <br />
+            <br />
+            On November 29, 1947, the UN General Assembly passed Resolution 181
+            with 33 votes in favor, 13 against, and 10 abstentions. Despite
+            international approval, the plan immediately sparked violence and
+            deepened the division on the ground. It’s widely seen as the
+            precursor to the 1948 Arab-Israeli war and the Nakba.
+            <br />
+            <br />
+            ➤{" "}
+            <a
+              href="https://www.britannica.com/topic/United-Nations-Resolution-181"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[#5C6BC0] underline"
+            >
+              Read more at Britannica
+            </a>
+          </p>
+        </div>
+      </section>
+
+      {/* The Nakba */}
+      <section className="card border border-[#90A4AE] bg-[#2A2A2A] shadow-xl">
+        <div className="card-body">
+          <h2 className="card-title text-[#5C6BC0] tinos-bold text-2xl">
+            The Nakba (“Catastrophe”)
+          </h2>
+          <p className="text-base leading-relaxed">
+            The Nakba refers to the mass displacement of Palestinians during the
+            1948 Arab-Israeli war, when over 750,000 people were forcibly
+            expelled from their homes. Palestine—once a diverse, multicultural
+            society—was fragmented. Villages were destroyed, families were
+            separated, and an entire nation was uprooted.
+            <br />
+            <br />
+            Following the UN partition plan, Zionist militias launched attacks
+            that drove Palestinians from their towns and villages. As the
+            British mandate ended and Israel declared independence, war erupted
+            across the region. The result was the permanent dispossession of
+            more than half the Palestinian population.
+            <br />
+            <br />
+            Today, over 5 million Palestinian refugees remain displaced across
+            the Middle East. The Nakba is not just a historical event—it is an
+            ongoing experience of occupation, erasure, and denial of basic
+            rights.
+            <br />
+            <br />
+            ➤{" "}
+            <a
+              href="https://www.un.org/unispal/about-the-nakba"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[#5C6BC0] underline"
+            >
+              Read more at UN: About the Nakba
+            </a>
+          </p>
+        </div>
+      </section>
+       <section className="card border border-[#90A4AE] bg-[#2A2A2A] shadow-xl">
+        <div className="card-body">
+          <h2 className="card-title text-[#5C6BC0] tinos-bold text-2xl">
+            The Naksa (“Setback” - 1967)
+          </h2>
+          <p className="text-base leading-relaxed">
+            The Naksa, meaning “setback” in Arabic, refers to the aftermath of the 
+            <strong> 1967 Six-Day War</strong>, when Israel launched a preemptive strike 
+            against Egypt, Jordan, and Syria. In just six days, Israel captured the 
+            <strong> West Bank, Gaza Strip, East Jerusalem, the Golan Heights, and the Sinai Peninsula</strong>.
+            <br />
+            <br />
+            Over <strong>300,000 more Palestinians were displaced</strong>, many of them 
+            for the second time since the Nakba of 1948. The war marked the start of Israel’s ongoing 
+            <strong> military occupation of the West Bank and Gaza</strong>, which continues today. 
+            Israel also annexed East Jerusalem, a move unrecognized by most of the international community.
+            <br />
+            <br />
+            The Naksa entrenched the Israeli-Palestinian conflict and deepened the refugee crisis. 
+            It also led to the rise of Palestinian political resistance movements, including the PLO, and set 
+            the stage for future uprisings such as the First Intifada.
+            <br />
+            <br />
+            ➤{" "}
+            <a
+              href="https://www.aljazeera.com/news/2021/6/5/what-is-naksa-day"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[#5C6BC0] underline"
+            >
+              Read more on Al Jazeera: What is Naksa Day?
+            </a>
+          </p>
+        </div>
+      </section>
+      {/* The First Intifada */}
+<section className="card border border-[#90A4AE] bg-[#2A2A2A] shadow-xl">
+  <div className="card-body">
+    <h2 className="card-title text-[#5C6BC0] tinos-bold text-2xl">
+      The First Intifada (1987–1993)
+    </h2>
+    <p className="text-base leading-relaxed">
+      The First Intifada was a grassroots uprising that began on December 8,
+      1987, after an Israeli military vehicle collided with a civilian car in
+      Gaza, killing four Palestinians. What followed was a mass rebellion across
+      the occupied territories, especially in Gaza and the West Bank, fueled by
+      two decades of Israeli occupation, economic hardship, and settlement
+      expansion.
+      <br />
+      <br />
+      Palestinians—especially youth—rose up using stones, strikes, graffiti,
+      and protests. Israel responded with harsh crackdowns, including the use of
+      live ammunition, curfews, mass arrests, and beatings. The UN Security
+      Council condemned Israel’s excessive force. Over six years, more than 1,000
+      Palestinians and over 100 Israelis were killed.
+      <br />
+      <br />
+      The uprising ended with the 1993 Oslo Accords. The PLO recognized Israel,
+      and Israel accepted the PLO as the representative of the Palestinian
+      people. However, many—including groups like Hamas and figures such as
+      Edward Said—viewed the agreement as a betrayal of Palestinian rights,
+      especially the right of return and the liberation of all historic
+      Palestine.
+      <br />
+      <br />
+      ➤{" "}
+      <a
+        href="https://www.aljazeera.com/gallery/2023/12/8/history-illustrated-the-first-intifada-against-israel"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="text-[#5C6BC0] underline"
+      >
+        Read more on Al Jazeera: History Illustrated – The First Intifada
+      </a>
+    </p>
+  </div>
+</section>
+{/* The Oslo Accords */}
+<section className="card border border-[#90A4AE] bg-[#2A2A2A] shadow-xl">
+  <div className="card-body">
+    <h2 className="card-title text-[#5C6BC0] tinos-bold text-2xl">
+      The Oslo Accords (1993–1995)
+    </h2>
+    <p className="text-base leading-relaxed">
+      The Oslo Accords were a series of landmark agreements between Israel and
+      the Palestine Liberation Organization (PLO), beginning with Oslo I signed
+      on September 13, 1993. It marked the first time both sides officially
+      recognized each other and pledged to end decades of conflict.
+      <br />
+      <br />
+      Brokered in secret in Norway and announced in Washington, D.C., the accords
+      led to the iconic handshake between Israeli Prime Minister Yitzhak Rabin
+      and PLO leader Yasser Arafat, under the auspices of U.S. President Bill
+      Clinton. Oslo II followed in 1995, laying out detailed plans for
+      self-governance and dividing the West Bank into Areas A, B, and C.
+      <br />
+      <br />
+      However, the hope quickly faded. Israel continued building illegal
+      settlements, while military occupation persisted. Rabin was assassinated
+      in 1995 by a far-right Israeli opposed to the accords. Final status
+      negotiations stalled indefinitely, and the creation of a sovereign
+      Palestinian state never materialized.
+      <br />
+      <br />
+      Many Palestinians now see the accords as a cover for further dispossession,
+      with Israel using the peace process to entrench control over Palestinian
+      land. Prominent critics, including Edward Said, warned early on that the
+      deal represented capitulation, not justice.
+      <br />
+      <br />
+      ➤{" "}
+      <a
+        href="https://www.aljazeera.com/news/2023/9/13/what-were-oslo-accords-israel-palestinians"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="text-[#5C6BC0] underline"
+      >
+        Read more on Al Jazeera: What were the Oslo Accords?
+      </a>
+    </p>
+  </div>
+</section>
+{/* Second Intifada */}
+<section className="card border border-[#90A4AE] bg-[#2A2A2A] shadow-xl">
+  <div className="card-body">
+    <h2 className="card-title text-[#5C6BC0] tinos-bold text-2xl">
+      The Second Intifada (Al-Aqsa Intifada)
+    </h2>
+    <p className="text-base leading-relaxed">
+      The Second Intifada, also known as the Al-Aqsa Intifada, erupted on{" "}
+      <strong>September 28, 2000</strong>, after Israeli opposition leader Ariel Sharon
+      entered the al-Aqsa Mosque compound in occupied East Jerusalem, accompanied by over
+      1,000 armed forces. The visit came at a time of deep Palestinian frustration over
+      stalled peace talks, settlement expansion, and Israel’s failure to meet the terms of
+      the Oslo Accords.
+      <br />
+      <br />
+      The uprising began with mass demonstrations, largely non-violent, but was met with
+      excessive Israeli force. Within the first few days, Israel fired over 1.3 million
+      bullets, killing 47 Palestinians—most of them civilians—and wounding nearly 2,000.
+      The violent suppression militarized the uprising and led to years of bloody
+      confrontation.
+      <br />
+      <br />
+      Over the course of five years, at least <strong>4,973 Palestinians</strong> were killed,
+      including <strong>1,262 children</strong>, and thousands more were injured. More than
+      5,000 Palestinian homes were demolished, and countless others displaced. Despite the
+      popular portrayal of violence, much of the Intifada included non-violent resistance,
+      civil disobedience, and mass mobilization, which was largely ignored by Western media.
+      <br />
+      <br />
+      The Second Intifada marked a significant shift in the Israeli-Palestinian conflict.
+      It deepened occupation structures, hardened Israeli policies, and was later used to
+      justify the building of the separation wall, expansion of settlements, and
+      entrenchment of military control over Palestinian territories.
+      <br />
+      <br />
+      ➤{" "}
+      <a
+        href="https://www.aljazeera.com/news/2020/9/28/palestinian-intifada-20-years-later-israeli-occupation-continues"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="text-[#5C6BC0] underline"
+      >
+        Read more at Al Jazeera
+      </a>
+    </p>
+  </div>
+</section>
+{/* Hamas Wins 2006 Election */}
+<section className="card border border-[#90A4AE] bg-[#2A2A2A] shadow-xl">
+  <div className="card-body">
+    <h2 className="card-title text-[#5C6BC0] tinos-bold text-2xl">
+      Hamas Wins Majority in 2006 Elections
+    </h2>
+    <p className="text-base leading-relaxed">
+      On <strong>January 26, 2006</strong>, Hamas won a stunning victory in the Palestinian
+      parliamentary elections, securing <strong>76 out of 132 seats</strong> and ending the
+      long-standing dominance of the Fatah movement. The election was widely seen as a
+      rejection of Fatah's years of corruption, inefficiency, and failure to achieve
+      tangible results in peace negotiations with Israel.
+      <br />
+      <br />
+      The result triggered the resignation of Prime Minister Ahmed Qureia and his cabinet,
+      even before final results were confirmed. President Mahmoud Abbas remained in office,
+      but with Hamas now controlling the legislature, the dynamics of Palestinian politics
+      shifted dramatically.
+      <br />
+      <br />
+      Despite concerns from the international community, Hamas leaders such as{" "}
+      <strong>Ismail Haniyeh</strong> and <strong>Khaled Mashaal</strong> struck a tone of
+      cautious pragmatism, expressing openness to political partnership and internal reform.
+      Some, like <strong>Mahmoud Zahar</strong>, indicated Hamas would maintain its truce if
+      Israel reciprocated. However, other statements made it clear that Hamas would not
+      recognize Israel nor prioritize peace negotiations.
+      <br />
+      <br />
+      The victory was also aided by <strong>Fatah’s internal divisions</strong>, as multiple
+      candidates split the party’s vote in many districts. Turnout reached nearly{" "}
+      <strong>78%</strong> of 1.3 million eligible voters, demonstrating strong public
+      engagement despite uncertainty and external pressure.
+      <br />
+      <br />
+      The election marked the <strong>first time Hamas contested a parliamentary vote</strong>
+      and brought about a seismic shift in Palestinian governance. Critics feared the win
+      could deepen international isolation, while supporters hoped Hamas would bring reform
+      and end internal dysfunction.
+      <br />
+      <br />
+      ➤{" "}
+      <a
+        href="https://www.aljazeera.com/news/2006/1/26/hamas-wins-huge-majority"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="text-[#5C6BC0] underline"
+      >
+        Read more at Al Jazeera
+      </a>
+    </p>
+  </div>
+</section>
+{/* UN Recognizes Palestine 2012 */}
+<section className="card border border-[#90A4AE] bg-[#2A2A2A] shadow-xl">
+  <div className="card-body">
+    <h2 className="card-title text-[#5C6BC0] tinos-bold text-2xl">
+      UN Recognizes Palestine – 2012
+    </h2>
+    <p className="text-base leading-relaxed">
+      On <strong>November 29, 2012</strong>, the United Nations General Assembly voted to
+      upgrade Palestine’s status to a <strong>non-member observer state</strong>. The vote
+      passed with an overwhelming <strong>138 in favor</strong>, <strong>9 against</strong>,
+      and <strong>41 abstentions</strong>.
+      <br />
+      <br />
+      This upgrade was a symbolic but significant diplomatic step. It gave the Palestinians
+      access to various international bodies, including the{" "}
+      <strong>International Criminal Court (ICC)</strong>, and was widely seen as indirect
+      recognition of a Palestinian state within the <strong>1967 borders</strong>, including
+      the <strong>West Bank, Gaza Strip, and East Jerusalem</strong>.
+      <br />
+      <br />
+      <strong>President Mahmoud Abbas</strong> told the assembly:{" "}
+      <em>“The General Assembly is called upon today to issue a birth certificate of the
+      reality of the State of Palestine.”</em> He emphasized the move was not meant to
+      delegitimize Israel but to affirm Palestine’s right to statehood.
+      <br />
+      <br />
+      While <strong>Palestinians celebrated</strong> across the West Bank and Gaza,{" "}
+      <strong>Israel and the United States opposed</strong> the resolution, arguing that
+      Palestinian statehood must come through direct negotiations. Israeli Prime Minister{" "}
+      <strong>Benjamin Netanyahu</strong> called the UN vote “meaningless” and warned it
+      would set back the peace process.
+      <br />
+      <br />
+      The resolution followed years of stalled peace talks, mainly over Israel’s continued
+      settlement expansion in the West Bank. Many European nations, including France and
+      Italy, supported the resolution, while others remained divided.
+      <br />
+      <br />
+      The move allowed Palestine to seek membership in more international organizations and
+      pursue legal avenues for statehood. It also reflected global frustration with the lack
+      of progress in negotiations and growing sympathy for the Palestinian cause.
+      <br />
+      <br />
+      ➤{" "}
+      <a
+        href="https://www.aljazeera.com/news/2012/11/29/un-votes-to-upgrade-palestinian-status"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="text-[#5C6BC0] underline"
+      >
+        Read more at Al Jazeera
+      </a>
+    </p>
+  </div>
+</section>
+{/* Sheikh Jarrah & Gaza Conflict – 2021 */}
+<section className="card border border-[#90A4AE] bg-[#2A2A2A] shadow-xl">
+  <div className="card-body">
+    <h2 className="card-title text-[#5C6BC0] tinos-bold text-2xl">
+      Sheikh Jarrah & Gaza Conflict – 2021
+    </h2>
+    <p className="text-base leading-relaxed">
+      In <strong>May 2021</strong>, violence erupted across Israel and the occupied
+      Palestinian territories in one of the most intense escalations since 2014. The
+      conflict, often referred to as the <strong>2021 Israel–Palestine crisis</strong> or the
+      <em> "Unity Intifada"</em>, was triggered by Israeli efforts to forcibly evict
+      Palestinian families from the <strong>Sheikh Jarrah</strong> neighborhood in East
+      Jerusalem and Israeli police raids on the <strong>al-Aqsa Mosque compound</strong>
+      during the final days of Ramadan.
+      <br />
+      <br />
+      On <strong>May 10, 2021</strong>, after Israel ignored Hamas's ultimatum to withdraw its
+      forces from Sheikh Jarrah and the al-Aqsa Mosque, <strong>Hamas and Islamic Jihad</strong> began
+      launching rockets from Gaza into Israeli cities. In response, Israel initiated a massive
+      aerial bombardment campaign across Gaza.
+      <br />
+      <br />
+      The <strong>11-day war</strong> left at least <strong>256 Palestinians dead</strong>,
+      including <strong>66 children</strong>, and more than <strong>1,900 injured</strong>. Israel reported
+      <strong>13 deaths</strong>, including <strong>2 children</strong>, and hundreds injured.
+      Over <strong>72,000 Palestinians were displaced</strong>, and <strong>94 buildings</strong>, including
+      media offices and residential towers, were destroyed in Gaza.
+      <br />
+      <br />
+      The UN and human rights groups condemned Israel's forced evictions and heavy-handed
+      response. The <strong>UN OHCHR</strong> warned that evictions in Sheikh Jarrah may constitute
+      <em> war crimes</em>. Organizations like <strong>B’Tselem</strong> and <strong>Human Rights Watch</strong>
+      described Israel’s dual legal system in East Jerusalem as “apartheid.”
+      <br />
+      <br />
+      The violence ended with an <strong>Egypt-brokered ceasefire</strong> on <strong>May 21, 2021</strong>, though
+      both sides claimed victory. The events of May 2021 sparked widespread protests by
+      Palestinians across Israel, the West Bank, and Gaza, as well as solidarity demonstrations
+      in cities around the world.
+      <br />
+      <br />
+      ➤{" "}
+      <a
+        href="https://en.wikipedia.org/wiki/2021_Israel%E2%80%93Palestine_crisis"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="text-[#5C6BC0] underline"
+      >
+        Read more on Wikipedia
+      </a>
+    </p>
+  </div>
+</section>
+
+
+
+    </div>
+  );
 }
 
-export default Education
+export default Education;
