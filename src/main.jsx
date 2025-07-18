@@ -21,7 +21,7 @@ const router = createBrowserRouter(
       <Route path="donate" element={<Donate />} />                
       <Route path="education" element={<Education />} />          
       <Route path="feedback" element={<Feedback />} />   
-      <Route path="mailprotest" element={<MailProtest />} />
+      <Route path="mailprotest"  element={<MailProtest csvUrl="./src/pages/MailProtest/mail.csv" />} />
       <Route path="suggestions" element={<Suggestions />} />           
     </Route>
   )
