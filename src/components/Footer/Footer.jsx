@@ -4,7 +4,7 @@ import { FaInstagram, FaGlobe, FaWhatsapp } from "react-icons/fa";
 
 function Footer() {
   return (
-    <footer className="bg-gradient-to-br font-mono from-black via-[#0F1115] to-[#1A1C20] text-gray-300 px-6 pt-16 pb-10">
+    <footer className="bg-gradient-to-br cursor-crosshair font-mono from-black via-[#0F1115] to-[#1A1C20] text-gray-300 px-6 pt-16 pb-10">
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-10 items-start">
 
         <div className="flex justify-center md:justify-start">
