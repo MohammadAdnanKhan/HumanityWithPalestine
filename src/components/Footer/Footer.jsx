@@ -11,7 +11,7 @@ function Footer() {
           <img
             src={logo}
             alt="Palestine Symbol"
-            className="w-40 ml-10 h-auto hover:drop-shadow-[0_0_12px_#5C6BC0] transition"
+            className="w-40 ml-10 animate-bounceSlow h-auto hover:drop-shadow-[0_0_12px_#5C6BC0] transition"
           />
         </div>
 
