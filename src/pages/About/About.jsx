@@ -8,9 +8,9 @@ import mission from '../../assets/mission.png';
 
 const About = () => {
   return (
-    <div className=" text-white px-4 md:px-16 py-10 space-y-20">
-      <h1 className="text-5xl font-bold text-center text-[#5C6BC0] font-serif">
-        Who We Are and Why We Stand for Palestine
+    <div className=" text-white px-4 md:px-16 py-10 space-y-10">
+      <h1 className="text-4xl font-bold text-center text-[#5C6BC0] font-serif">
+        Who We Are and Why We Stand for Palestine 🍉 
       </h1>
 
 <div className="flex flex-col lg:flex-row w-full text-white">
@@ -103,7 +103,7 @@ const About = () => {
           
           <div className="lg:col-span-2 space-y-6">
             <h2 className="text-4xl lg:text-5xl font-bold text-[#5C6BC0] font-serif">
-              Our Mission
+              Our Mission 🍉 
             </h2>
             <p className="text-lg leading-relaxed text-[#B0BEC5]">
               We aim to amplify the voices of Palestinians and raise awareness about the ongoing
@@ -139,13 +139,20 @@ const About = () => {
           </div>
         </div>
       </div>
-
-      <div className="flex justify-center">
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/rfbvaN2coVo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      <div className="relative w-full pb-[56.25%] h-0">
+        <iframe
+          className="absolute top-0 left-0 w-full h-full"
+          src="https://www.youtube.com/embed/rfbvaN2coVo"
+          title="YouTube video player"
+          frameBorder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerPolicy="strict-origin-when-cross-origin"
+          allowFullScreen
+        ></iframe>
       </div>
 
       <div className="text-center space-y-4">
-        <h2 className="text-2xl font-bold text-white font-serif">Connect with us</h2>
+        <h2 className="text-2xl font-bold font-serif text-[#5C6BC0]">Connect with us 🍉</h2>
         <div className="flex justify-center gap-4 flex-wrap">
           <a
             href="https://www.instagram.com/humanitywith_palestine"
