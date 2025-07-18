@@ -40,7 +40,7 @@ function Donate() {
   ];
 
   return (
-    <div className="min-h-screen text-white px-6 py-12 font-mono bg-black">
+    <div className="min-h-screen text-white px-6 py-12 font-mono">
       <div className="max-w-7xl mx-auto space-y-16">
         <header className="text-center space-y-4">
           <h1 className="text-4xl md:text-5xl font-bold text-[#5C6BC0] font-serif">
