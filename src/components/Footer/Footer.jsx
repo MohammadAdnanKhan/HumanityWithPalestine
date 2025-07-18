@@ -11,6 +11,7 @@ function Footer() {
           <img
             src={logo}
             alt="Palestine Symbol"
+            title="Free Palestine!"
             className="w-40 ml-10 animate-bounceSlow h-auto hover:drop-shadow-[0_0_12px_#5C6BC0] transition"
           />
         </div>
@@ -19,17 +20,17 @@ function Footer() {
           <h3 className="text-md font-semibold text-[#5C6BC0] font-serif">
             Humanity With Palestine 🍉
           </h3>
-          <p className="leading-relaxed text-gray-400 text-sm">
+          <p className="leading-relaxed text-[#90A4AE] text-sm">
             Started by students with a voice and a heart, Humanity With Palestine stands to amplify truth, share hope, and remind the world that silence in the face of injustice is not an option.
           </p>
-          <div className="bg-[#5C6BC0]/10 border border-[#5C6BC0]/20 rounded-xl p-3 italic backdrop-blur-md mt-4 text-xs text-gray-300">
+          <div className="bg-[#5C6BC0]/10 border border-[#5C6BC0]/20 rounded-xl p-3 italic backdrop-blur-md mt-4 text-xs text-[#90A4AE]">
             “Where there is oppression there is resistance 🍉”
           </div>
         </div>
 
         <div>
           <h4 className="text-md font-semibold text-[#5C6BC0] font-serif mb-3">Explore</h4>
-          <ul className="space-y-2 text-sm">
+          <ul className="space-y-2 text-[#90A4AE] text-sm">
             {[
               { label: "Home", href: "/" },
               { label: "Boycott", href: "/boycott" },
@@ -52,7 +53,7 @@ function Footer() {
         </div>
 
         <div className="space-y-4 text-sm">
-          <p className="leading-relaxed text-gray-400">
+          <p className="leading-relaxed text-[#90A4AE]">
             This platform curates authentic relief efforts supporting Palestinian lives.
             We stand for dignity, justice, and awareness through digital action.
           </p>

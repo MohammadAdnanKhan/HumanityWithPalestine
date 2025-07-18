@@ -38,7 +38,7 @@ function MailProtest({ csvUrl }) {
           Mail Protest for Palestine 🍉
         </h1>
 
-        <p className="text-center text-gray-400 text-sm">
+        <p className="text-center text-[#90A4AE] text-sm">
           Speak up with a single click. Choose a company, and send a message of protest.
         </p>
 
@@ -99,7 +99,7 @@ function MailProtest({ csvUrl }) {
           </div>
         </div>
 
-        <div className="text-center text-xs text-gray-500 italic max-w-xl mx-auto">
+        <div className="text-center text-xs text-[#90A4AE] italic max-w-xl mx-auto">
           We’re currently focusing on companies complicit in the ongoing genocide i.e.
           particularly those supplying arms or technology used against civilians.
         </div>

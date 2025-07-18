@@ -101,7 +101,7 @@ const About = () => {
       <div className="text-[#D7CCC8] px-4 py-12">
         <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-12 items-center">
           
-          <div className="lg:col-span-2 space-y-6">
+          <div className="lg:col-span-2 font-mono space-y-6">
             <h2 className="text-4xl lg:text-5xl font-bold text-[#5C6BC0] font-serif">
               Our Mission 🍉 
             </h2>
