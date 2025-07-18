@@ -458,6 +458,134 @@ function Education() {
     </p>
   </div>
 </section>
+{/* Recommended Books */}
+<h2 className="text-3xl tinos-bold text-[#5C6BC0] mt-20 mb-6">Recommended Reading</h2>
+
+{/* Book 1 */}
+<div className="flex flex-col md:flex-row items-center gap-6 bg-[#2A2A2A] border border-[#90A4AE] p-6 rounded-lg shadow-lg">
+  <img src="https://m.media-amazon.com/images/I/71vo0-PuxHS._UF1000,1000_QL80_.jpg" alt="The Hundred Years' War on Palestine" className="w-48 rounded" />
+  <div>
+    <h3 className="text-xl text-[#5C6BC0] tinos-bold">
+      <a href="https://us.macmillan.com/books/9781627798556/thehundredyearswaronpalestine/" target="_blank" rel="noopener noreferrer" className="hover:underline">
+        The Hundred Years' War on Palestine
+      </a>
+    </h3>
+    <p className="text-sm leading-relaxed mt-2">
+      Rashid Khalidi frames Zionism as a settler colonial project backed by imperial powers, focusing on six key "declarations of war" against Palestinians from 1917–2017. A vital historical narrative grounded in archival and personal accounts.
+    </p>
+  </div>
+</div>
+
+{/* Book 2 */}
+<div className="flex flex-col md:flex-row-reverse items-center gap-6 bg-[#2A2A2A] border border-[#90A4AE] p-6 rounded-lg shadow-lg mt-6">
+  <img src="https://m.media-amazon.com/images/I/810yW7YkKIL.jpg" alt="The Ethnic Cleansing of Palestine" className="w-48 rounded" />
+  <div>
+    <h3 className="text-xl text-[#5C6BC0] tinos-bold">
+      <a href="https://www.simonandschuster.com/books/The-Ethnic-Cleansing-of-Palestine/Ilan-Pappe/9781851685554" target="_blank" rel="noopener noreferrer" className="hover:underline">
+        The Ethnic Cleansing of Palestine
+      </a>
+    </h3>
+    <p className="text-sm leading-relaxed mt-2">
+      Ilan Pappé argues that the 1948 Palestinian expulsion was a deliberate campaign of ethnic cleansing, backed by Plan Dalet and military operations. A controversial but well-documented critique of Israel's founding.
+    </p>
+  </div>
+</div>
+
+{/* Book 3 */}
+<div className="flex flex-col md:flex-row items-center gap-6 bg-[#2A2A2A] border border-[#90A4AE] p-6 rounded-lg shadow-lg mt-6">
+  <img src="https://m.media-amazon.com/images/I/71e9V25bSPL._UF1000,1000_QL80_.jpg" alt="A History of Zionism" className="w-48 rounded" />
+  <div>
+    <h3 className="text-xl text-[#5C6BC0] tinos-bold">
+      <a href="https://www.goodreads.com/en/book/show/173399.A_History_of_Zionism" target="_blank" rel="noopener noreferrer" className="hover:underline">
+        A History of Zionism
+      </a>
+    </h3>
+    <p className="text-sm leading-relaxed mt-2">
+      Walter Laqueur offers a comprehensive account of Zionism’s evolution from Enlightenment-era Europe to the creation of Israel. While sympathetic to Zionist aspirations, it’s a crucial read for understanding the ideological foundations.
+    </p>
+  </div>
+</div>
+
+{/* Book 4 */}
+<div className="flex flex-col md:flex-row-reverse items-center gap-6 bg-[#2A2A2A] border border-[#90A4AE] p-6 rounded-lg shadow-lg mt-6">
+  <img src="https://m.media-amazon.com/images/I/81oMX57M-GL.jpg" alt="The Question of Palestine" className="w-48 rounded" />
+  <div>
+    <h3 className="text-xl text-[#5C6BC0] tinos-bold">
+      <a href="https://www.goodreads.com/book/show/57546.The_Question_of_Palestine" target="_blank" rel="noopener noreferrer" className="hover:underline">
+        The Question of Palestine
+      </a>
+    </h3>
+    <p className="text-sm leading-relaxed mt-2">
+      Edward Said critically analyzes Zionism and U.S. foreign policy, asserting the importance of Palestinian self-determination. A seminal work bridging historical scholarship and personal testimony.
+    </p>
+  </div>
+</div>
+
+
+<h2 className="text-3xl tinos-bold text-[#5C6BC0] mt-20 mb-6">Educational Videos</h2>
+
+<div className="carousel w-full">
+  <div id="video1" className="carousel-item relative w-full justify-center">
+    <iframe
+      className="w-full h-[450px] md:h-[600px] rounded-lg"
+      src="https://www.youtube.com/embed/H7FML0wzJ6A"
+      title="Al-Nakba: The Palestinian Catastrophe"
+      frameBorder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      allowFullScreen
+    ></iframe>
+    <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
+      <a href="#video4" className="btn btn-circle">❮</a>
+      <a href="#video2" className="btn btn-circle">❯</a>
+    </div>
+  </div>
+
+  <div id="video2" className="carousel-item relative w-full justify-center">
+    <iframe
+      className="w-full h-[450px] md:h-[600px] rounded-lg"
+      src="https://www.youtube.com/embed/yBjMbe24Vu0"
+      title="Brief Animated History of the Question of Palestine"
+      frameBorder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      allowFullScreen
+    ></iframe>
+    <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
+      <a href="#video1" className="btn btn-circle">❮</a>
+      <a href="#video3" className="btn btn-circle">❯</a>
+    </div>
+  </div>
+
+  <div id="video3" className="carousel-item relative w-full justify-center">
+    <iframe
+      className="w-full h-[450px] md:h-[600px] rounded-lg"
+      src="https://www.youtube.com/embed/HV9rLVLQcEM"
+      title="Zionism: Israel's Revolutionary Dream"
+      frameBorder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      allowFullScreen
+    ></iframe>
+    <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
+      <a href="#video2" className="btn btn-circle">❮</a>
+      <a href="#video4" className="btn btn-circle">❯</a>
+    </div>
+  </div>
+
+  <div id="video4" className="carousel-item relative w-full justify-center">
+    <iframe
+      className="w-full h-[450px] md:h-[600px] rounded-lg"
+      src="https://www.youtube.com/embed/wH8Ip1cvlRY"
+      title="The Hundred Years' War on Palestine - Rashid Khalidi"
+      frameBorder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      allowFullScreen
+    ></iframe>
+    <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
+      <a href="#video3" className="btn btn-circle">❮</a>
+      <a href="#video1" className="btn btn-circle">❯</a>
+    </div>
+  </div>
+</div>
+
 
 
 
