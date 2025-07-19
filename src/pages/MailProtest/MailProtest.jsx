@@ -34,7 +34,7 @@ function MailProtest({ csvUrl }) {
   return (
     <div className="min-h-screen text-white font-mono px-6 py-16 ">
       <div className="max-w-3xl mx-auto space-y-5 relative">
-        <h1 className="text-4xl font-bold text-center font-serif text-[#5C6BC0]">
+        <h1 className="text-4xl md:text-5xl font-bold text-center font-serif text-[#5C6BC0]">
           Mail Protest for Palestine 🍉
         </h1>
 

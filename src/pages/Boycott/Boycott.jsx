@@ -46,7 +46,7 @@ const Boycott = () => {
   return (
     <div className="min-h-screen text-white px-4 py-10">
       <div className="max-w-3xl mx-auto text-center">
-        <h1 className="text-3xl sm:text-4xl font-serif font-bold text-[#5C6BC0] mb-6">
+        <h1 className="text-4xl md:text-5xl font-serif font-bold text-[#5C6BC0] mb-6">
           Don't buy Apartheid!
         </h1>
 
