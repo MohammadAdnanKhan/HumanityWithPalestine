@@ -19,7 +19,7 @@ const router = createBrowserRouter(
       <Route path="about" element={<About />} />                
       <Route path="boycott" element={<Boycott />} />             
       <Route path="donate" element={<Donate />} />                
-      <Route path="education" element={<Education />} />          
+      <Route path="education" element={<Education  csvUrl="./src/pages/Education/data.csv" />} />          
       <Route path="feedback" element={<Feedback />} />   
       <Route path="mailprotest"  element={<MailProtest csvUrl="./src/pages/MailProtest/mail.csv" />} />
       <Route path="suggestions" element={<Suggestions />} />           
