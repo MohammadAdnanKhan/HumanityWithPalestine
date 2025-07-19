@@ -90,10 +90,8 @@ function Education({ csvUrl }) {
         </div>
       )}
 
-      {/* BOOK SECTION */}
-      <h2 className="text-3xl tinos-bold text-[#5C6BC0] mt-20 mb-6">Recommended Reading</h2>
+      <h2 className="text-3xl font-bold font-serif text-[#5C6BC0] mt-20 mb-6">Recommended Reading</h2>
 
-      {/* Book Components */}
       {[
         {
           title: "The Hundred Years' War on Palestine",
@@ -132,7 +130,7 @@ function Education({ csvUrl }) {
         >
           <img src={book.img} alt={book.title} className="w-48 rounded" />
           <div>
-            <h3 className="text-xl text-[#5C6BC0] tinos-bold">
+            <h3 className="text-xl text-[#5C6BC0] font-bold font-serif">
               <a href={book.url} target="_blank" rel="noopener noreferrer" className="hover:underline">
                 {book.title}
               </a>
@@ -142,8 +140,7 @@ function Education({ csvUrl }) {
         </div>
       ))}
 
-      {/* VIDEO SECTION */}
-      <h2 className="text-3xl tinos-bold text-[#5C6BC0] mt-20 mb-6">Educational Videos</h2>
+      <h2 className="text-3xl font-serif font-bold text-[#5C6BC0] mt-20 mb-6">Educational Videos</h2>
 
       <div className="carousel w-full">
         {[
