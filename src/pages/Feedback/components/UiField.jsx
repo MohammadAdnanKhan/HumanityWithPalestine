@@ -15,7 +15,7 @@ export default function UiField({ formData, setFormData }) {
   ];
 
   return (
-    <div class="font-mono">
+    <div className="font-mono">
       <div>
         <label className="block text-sm font-medium text-blue-200">
           What were you trying to do?

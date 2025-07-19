@@ -1,6 +1,6 @@
 export default function ContentField({ formData, setFormData }) {
   return (
-    <div class="font-mono">
+    <div className="font-mono">
       <div>
         <label className="block text-sm font-medium text-blue-200">
           Affected company or product

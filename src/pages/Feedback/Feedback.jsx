@@ -3,37 +3,41 @@ import ContentField from './components/ContentField'
 import FeatureField from './components/FeatureField'
 import TrustField from './components/TrustField'
 import UiField from './components/UiField'
+import validateForm from './utils/validateForm'
+
+const initialFormData = {
+  name: '',
+  email: '',
+  contentIss: {
+    name: '',
+    description: '',
+    type: '',
+    link: ''
+  },
+  feature: {
+    description: '',
+    where: '',
+  },
+  uiIss: {
+    work: '',
+    wrong: '',
+    device: ''
+  },
+  trustConcern: {
+    issueWith: '',
+    why: '',
+    link: '',
+  },
+  other: {
+    message: ''
+  },
+};
 
 function Feedback() {
   const [page, setPage] = useState(1);
   const [category, setCategory] = useState('');
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    contentIss: {
-      name: '',
-      description: '',
-      type: '',
-      link: ''
-    },
-    feature: {
-      description: '',
-      where: '',
-    },
-    uiIss: {
-      work: '',
-      wrong: '',
-      device: ''
-    },
-    trustConcern: {
-      issueWith: '',
-      why: '',
-      link: '',
-    },
-    other: {
-      message: ''
-    },
-  });
+  const [submitError, setSubmitError] = useState(null);
+  const [formData, setFormData] = useState({ ...initialFormData });
 
   const handleNext = (e) => {
     e.preventDefault();
@@ -42,8 +46,17 @@ function Feedback() {
     }
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
+
+    const error = validateForm({ formData, category });
+    if (error) {
+      setSubmitError(error);
+      setTimeout(() => setSubmitError(null), 3000);
+      return;
+    }
+
+    // user passed validation
     const feedbackObj = {
       category,
       ...formData
@@ -51,42 +64,41 @@ function Feedback() {
 
     console.log('Submitted data:', feedbackObj);
 
-    setPage(3);
-    // setFormData({
-    //   name: '',
-    //   email: '',
-    //   contentIss: {
-    //     name: '',
-    //     description: '',
-    //     type: '',
-    //     link: ''
-    //   },
-    //   feature: {
-    //     description: '',
-    //     where: '',
-    //   },
-    //   uiIss: {
-    //     work: '',
-    //     wrong: '',
-    //     device: ''
-    //   },
-    //   trustConcern: {
-    //     issueWith: '',
-    //     why: '',
-    //     link: '',
-    //   },
-    //   other: {
-    //     message: ''
-    //   },
-    // });
-    setCategory('');
+    try {
+      const response = await fetch('https://hackforpalestine.onrender.com/feedback', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(feedbackObj)
+      });
+
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+
+      const result = await response.json();
+      console.log('Server response:', result);
+
+      // After successful submission
+      setPage(3);
+      setCategory('');
+      setFormData({ ...initialFormData });
+
+    } catch (error) {
+      setSubmitError(error.message);
+      setTimeout(() => setSubmitError(null), 3000);
+      console.error('Error submitting feedback:', error);
+    }
   };
 
   return (
     <div className="min-h-[80vh] flex items-center justify-center p-6">
       <div className="bg-zinc-700/80 p-8 rounded-lg shadow-sm shadow-zinc-300 w-full max-w-md">
         <h1 className="text-2xl font-serif font-bold text-gray-100 mb-4">
-          {page === 2 ? category : 'We value your feedback'}
+          {page === 1 && 'We value your feedback'}
+          {page === 2 && category}
+          {page === 3 && 'Feedback Submitted'}
         </h1>
 
         {page === 1 && (
@@ -114,7 +126,7 @@ function Feedback() {
               type="submit"
               className="w-full font-mono bg-[#5C6BC0] text-white py-2 px-4 rounded-md hover:bg-[#5C6BC0]/80 transition"
             >
-              Next 
+              Next
             </button>
           </form>
         )}
@@ -191,6 +203,11 @@ function Feedback() {
               </>
             )}
 
+            {submitError &&
+              <div className='font-mono text-red-500 bg-red-700/40 p-2 rounded text-md text-center capitalize'>
+                {submitError}
+              </div>
+            }
             <button
               type="submit"
               className="w-full bg-[#D7CCC8] font-mono text-black py-2 px-4 rounded-md hover:bg-[#5C6BC0]/80 transition"
@@ -209,11 +226,11 @@ function Feedback() {
 
         {page === 3 && (
           <p className="text-green-600 font-serif font-medium">
-             Thank you{formData.name
-              ? <span>
+            Thank you{formData.name
+              ? <>
                 <span>, </span>
                 <span className=''>{formData.name}</span>
-              </span>
+              </>
               : ''} for your feedback!
           </p>
         )}

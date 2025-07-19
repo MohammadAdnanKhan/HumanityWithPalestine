@@ -164,7 +164,7 @@ const Boycott = () => {
       </div>
       {!result && !loading && (
         <div
-          className="mt-12 lg:ml-20 lg:mr-20 md:ml-10 md:ml-10 relative rounded-2xl overflow-hidden border border-[#90A4AE] shadow-lg"
+          className="mt-12 lg:ml-20 lg:mr-20 md:ml-10 relative rounded-2xl overflow-hidden border border-[#90A4AE] shadow-lg"
           style={{
             backgroundImage: `url('https://www.transcend.org/tms/wp-content/uploads/2024/08/gaza-israel-genocide-palestine-30.jpg')`,
             backgroundSize: 'cover',
