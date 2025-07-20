@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import { SERVICES } from './data/services';
-
-const BACKEND_BASE_URL = 'https://hackforpalestineapi.onrender.com/';
+import BACKEND_URL from '../constants';
 
 function Suggestions() {
   const [selectedService, setSelectedService] = useState(null);
@@ -11,7 +10,7 @@ function Suggestions() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await fetch(`${BACKEND_BASE_URL}/service`, {
+      const res = await fetch(`${BACKEND_URL}/service`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -55,10 +54,10 @@ function Suggestions() {
                   value={
                     selectedService
                       ? SERVICES.findIndex(
-                          (s) =>
-                            s.Service_Name === selectedService.Service_Name &&
-                            s.Service_Type === selectedService.Service_Type
-                        )
+                        (s) =>
+                          s.Service_Name === selectedService.Service_Name &&
+                          s.Service_Type === selectedService.Service_Type
+                      )
                       : ''
                   }
                   onChange={(e) => setSelectedService(SERVICES[Number(e.target.value)])}
@@ -108,9 +107,8 @@ function Suggestions() {
               <button
                 type="submit"
                 disabled={!selectedService || !domain}
-                className={`w-full bg-[#5C6BC0] hover:bg-[#7986CB] text-white font-mono font-semibold py-2 px-4 rounded-md transition duration-200 ${
-                  (!selectedService || !domain) && 'cursor-not-allowed opacity-50'
-                }`}
+                className={`w-full bg-[#5C6BC0] hover:bg-[#7986CB] text-white font-mono font-semibold py-2 px-4 rounded-md transition duration-200 ${(!selectedService || !domain) && 'cursor-not-allowed opacity-50'
+                  }`}
               >
                 Get Suggestions
               </button>

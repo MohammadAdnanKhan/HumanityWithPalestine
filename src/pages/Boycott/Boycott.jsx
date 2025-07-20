@@ -1,6 +1,7 @@
 import { useState } from "react";
 import ReactMarkdown from "react-markdown";
 import { capitalise } from './utils';
+import BACKEND_URL from "../constants";
 
 const Boycott = () => {
   const [query, setQuery] = useState("");
@@ -21,7 +22,7 @@ const Boycott = () => {
     setResult(null);
 
     try {
-      const response = await fetch("https://hackforpalestineapi.onrender.com/search", {
+      const response = await fetch(`${BACKEND_URL}/search`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

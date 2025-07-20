@@ -4,6 +4,7 @@ import FeatureField from './components/FeatureField'
 import TrustField from './components/TrustField'
 import UiField from './components/UiField'
 import validateForm from './utils/validateForm'
+import BACKEND_URL from '../constants'
 
 const initialFormData = {
   name: '',
@@ -62,11 +63,8 @@ function Feedback() {
       ...formData
     };
 
-    // console.log('Submitted data:', feedbackObj);
-
     try {
-      // const response = await fetch('http://localhost:5000/feedback', {
-      const response = await fetch('https://hackforpalestineapi.onrender.com/feedback', {
+      const response = await fetch(`${BACKEND_URL}/feedback`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
@@ -79,7 +77,6 @@ function Feedback() {
       }
 
       const result = await response.json();
-      // console.log('Server response:', result);
 
       // After successful submission
       setPage(3);
