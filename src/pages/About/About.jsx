@@ -13,48 +13,48 @@ const About = () => {
         Who We Are and Why We Stand for Palestine 🍉 
       </h1>
 
-<div className="flex flex-col lg:flex-row w-full text-white">
-  <div className="lg:w-1/2 w-full h-96 lg:h-auto">
-    <img
-      src="https://i.guim.co.uk/img/media/070a48f58b985f23c9b5d38719ae508c04ede0e2/0_133_4000_2400/master/4000.jpg?width=620&dpr=2&s=none&crop=none"
-      alt="Pro-Palestinian protestors"
-      className="w-full h-full object-cover cursor-grab rounded-lg "
-    />
-  </div>
+      <div className="flex flex-col lg:flex-row w-full text-white">
+        <div className="lg:w-1/2 w-full h-96 lg:h-auto">
+          <img
+            src="https://i.guim.co.uk/img/media/070a48f58b985f23c9b5d38719ae508c04ede0e2/0_133_4000_2400/master/4000.jpg?width=620&dpr=2&s=none&crop=none"
+            alt="Pro-Palestinian protestors"
+            className="w-full h-full object-cover cursor-grab rounded-lg "
+          />
+        </div>
 
-  <div className="lg:w-1/2 w-full p-6 sm:p-10 flex flex-col font-mono justify-center">
+        <div className="lg:w-1/2 w-full p-6 sm:p-10 flex flex-col font-mono justify-center">
 
-    <div className="text-[#90A4AE] space-y-4 cursor-crosshair text-sm sm:text-base leading-relaxed">
-      <p>
-        <strong>Humanity With Palestine</strong> is a cause started by college students
-        from Jamia Millia Islamia, New Delhi. At Humanity With Palestine, we have tried to
-        connect with a wide audience, spanning not only across India but also
-        internationally.
-      </p>
-      <p>
-        We have multiple social media accounts where we actively share important updates,
-        articles, and verified news about the ongoing genocide in Gaza. Our goal is to
-        amplify the voices of Palestinians and bring attention to the injustices that are
-        often ignored by mainstream media.
-      </p>
-      <p>
-        Alhamdulillah, what began as a few students expressing solidarity has now grown into a small but
-        impactful collective that collaborates with like-minded activists and shares
-        educational resources to help people better understand the history and context of
-        the Palestinian struggle.
-      </p>
-      <p>
-        Our work is driven by the belief that silence in the face of oppression is
-        complicity. Through our platform, we aim to inspire others - especially students -
-        to speak up, raise awareness, and advocate for justice and human rights.
-      </p>
-      <p>
-        We are not affiliated with any political party or organization. Our stance is
-        simple: <strong className="text-[#EE2A35]">We stand for humanity,</strong> <strong className="text-[white]">we stand against genocide,</strong><strong className="text-[#009736]"> we stand with Palestine.</strong>
-      </p>
-    </div>
-  </div>
-</div>
+          <div className="text-[#90A4AE] space-y-4 cursor-crosshair text-sm sm:text-base leading-relaxed">
+            <p>
+              <strong>Humanity With Palestine</strong> is a cause started by college students
+              from Jamia Millia Islamia, New Delhi. At Humanity With Palestine, we have tried to
+              connect with a wide audience, spanning not only across India but also
+              internationally.
+            </p>
+            <p>
+              We have multiple social media accounts where we actively share important updates,
+              articles, and verified news about the ongoing genocide in Gaza. Our goal is to
+              amplify the voices of Palestinians and bring attention to the injustices that are
+              often ignored by mainstream media.
+            </p>
+            <p>
+              Alhamdulillah, what began as a few students expressing solidarity has now grown into a small but
+              impactful collective that collaborates with like-minded activists and shares
+              educational resources to help people better understand the history and context of
+              the Palestinian struggle.
+            </p>
+            <p>
+              Our work is driven by the belief that silence in the face of oppression is
+              complicity. Through our platform, we aim to inspire others - especially students -
+              to speak up, raise awareness, and advocate for justice and human rights.
+            </p>
+            <p>
+              We are not affiliated with any political party or organization. Our stance is
+              simple: <strong className="text-[#EE2A35]">We stand for humanity,</strong> <strong className="text-[white]">we stand against genocide,</strong><strong className="text-[#009736]"> we stand with Palestine.</strong>
+            </p>
+          </div>
+        </div>
+      </div>
 
       <div className="space-y-10 font-mono">
         <h2 className="text-3xl font-bold font-serif text-left text-[#5C6BC0]">

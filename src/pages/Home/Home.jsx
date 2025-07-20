@@ -170,10 +170,14 @@ export default function HomePage() {
             <p className="text-[#B0BEC5] font-mono ">Companies Listed</p>
           </div>
           <div>
-          <Counter target="50+" />
+          <Counter target="40+" />
             <p className="text-[#B0BEC5] font-mono ">Detailed Suggestions Listed</p>
           </div>
-                    <div>
+          <div>
+          <Counter target="30" />
+            <p className="text-[#B0BEC5] font-mono ">Email Proposals Created</p>
+          </div>
+          <div>
           <Counter target="5+" />
             <p className="text-[#B0BEC5] font-mono ">Books Added</p>
           </div>
