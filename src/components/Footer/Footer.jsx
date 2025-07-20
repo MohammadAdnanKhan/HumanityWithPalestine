@@ -38,7 +38,7 @@ function Footer() {
               { label: "Suggestions", href: "/suggestions" },
               { label: "Donate", href: "/donate" },
               { label: "About", href: "/about" },
-              { label: "Contact", href: "/contact" },
+              { label: "Contact", href: "/feedback" },
             ].map((link) => (
               <li key={link.label}>
                 <a

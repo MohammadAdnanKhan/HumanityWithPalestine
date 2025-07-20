@@ -10,6 +10,7 @@ import Education from './pages/Education/Education.jsx';
 import Feedback from './pages/Feedback/Feedback.jsx';
 import MailProtest from './pages/MailProtest/MailProtest.jsx';
 import Suggestions from './pages/Suggestions/Suggestions.jsx';
+import NotFound from './pages/Notfound/Notfound.jsx';
 import './index.css';
 
 const router = createBrowserRouter(
@@ -22,7 +23,8 @@ const router = createBrowserRouter(
       <Route path="education" element={<Education  csvUrl="./src/pages/Education/data.csv" />} />          
       <Route path="feedback" element={<Feedback />} />   
       <Route path="mailprotest"  element={<MailProtest csvUrl="./src/pages/MailProtest/mail.csv" />} />
-      <Route path="suggestions" element={<Suggestions />} />           
+      <Route path="suggestions" element={<Suggestions />} /> 
+      <Route path="*" element={<NotFound />} />           
     </Route>
   )
 );
