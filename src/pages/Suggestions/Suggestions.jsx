@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState } from 'react';
 import AsyncSelect from 'react-select/async';
 
 // const BACKEND_BASE_URL = 'https://hackforpalestine.onrender.com';
@@ -9,17 +9,16 @@ function Suggestions() {
   const [domain, setDomain] = useState('');
   const [alternatives, setAlternatives] = useState(null);
 
-  // fetch suggestions dynamically
   const loadOptions = async (inputValue) => {
     if (inputValue.length < 3) return [];
     try {
       const res = await fetch(`${BACKEND_BASE_URL}/service?name=${encodeURIComponent(inputValue)}`);
       const data = await res.json();
 
-      return data.map(s => ({
+      return data.map((s) => ({
         label: `${s.Service_Name} (${s.Service_Type})`,
         value: s.Service_Name,
-        raw: s, // stored original object needed later
+        raw: s,
       }));
     } catch (err) {
       console.error('Error loading service suggestions:', err);
@@ -29,90 +28,88 @@ function Suggestions() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("Selected Service:", selectedService);
-    console.log("Domain:", domain);
-    // Do the POST /service here if needed
-
     try {
       const res = await fetch(`${BACKEND_BASE_URL}/service`, {
         method: 'POST',
         headers: {
-          "Content-Type": "application/json",
+          'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-          "name": selectedService.raw.Service_Name,
-          "type": selectedService.raw.Service_Type,
-          "domain": domain
-        })
+          name: selectedService.raw.Service_Name,
+          type: selectedService.raw.Service_Type,
+          domain,
+        }),
       });
       const data = await res.json();
-      console.log(data);
       setAlternatives([...data]);
-    } catch (error) {
+    } catch (err) {
       console.error('Error fetching service alternatives:', err);
       setAlternatives(null);
     }
   };
 
   return (
-    <div className="min-h-screen flex flex-row justify-center gap-4 mt-6 pb-6">
-      <div className="bg-zinc-700/80 p-8 rounded-lg shadow-sm shadow-zinc-300 w-full h-fit max-w-md">
-        <h1 className="text-2xl font-serif font-bold text-gray-100">
-          Get Detailed Suggestions
+    <div className="min-h-screen px-4 md:px-10 py-10 flex flex-col lg:flex-row gap-10 justify-center bg-[#101827]">
+      {/* Left: Form */}
+      <div className="bg-white/5 border border-white/10 backdrop-blur-lg p-6 md:p-8 rounded-2xl shadow-xl w-full max-w-xl text-white">
+        <h1 className="text-2xl md:text-3xl font-serif font-bold text-blue-200 mb-2">
+          Ethical Service Suggestions
         </h1>
-        <p className='text-sm mb-4'>On how to Divest from an unethical product</p>
+        <p className="text-sm text-gray-300 mb-6">
+          Get alternatives to unethical products or services based on your domain.
+        </p>
 
         <form onSubmit={handleSubmit} className="space-y-6">
-
-          {/* service name autocomplete */}
+          {/* Autocomplete Input */}
           <div>
-            <label className="block text-sm font-mono font-medium text-blue-200">
-              Enter the name of the service/product you want to divest from
+            <label className="block text-sm font-medium text-blue-100 mb-1">
+              Product/Service to Divest From
             </label>
             <AsyncSelect
               cacheOptions
               defaultOptions
               loadOptions={loadOptions}
               onChange={setSelectedService}
-              placeholder="Start typing..."
-              className="text-sm text-slate-900"
+              placeholder="Type at least 3 characters..."
+              className="text-sm text-black"
               styles={{
                 control: (base) => ({
                   ...base,
                   backgroundColor: 'white',
                   fontFamily: 'monospace',
-                  borderColor: '#d1d5db',
+                  borderColor: '#cbd5e1',
                 }),
                 menu: (base) => ({
                   ...base,
-                  zIndex: 999,
+                  zIndex: 20,
                 }),
               }}
             />
           </div>
+
+          {/* Display Features */}
           {(selectedService?.raw?.Feature_1 || selectedService?.raw?.Feature_2) && (
-            <div className="mt-4 px-4 py-2 bg-zinc-800/50 border border-zinc-300 rounded-md shadow-sm">
-              <h3 className="text-md font-mono font-semibold text-gray-100 mb-2">
-                Services Provided by <span className="text-blue-300">{selectedService.value}</span>
+            <div className="bg-zinc-800/60 border border-zinc-600 p-4 rounded-lg text-sm text-gray-200">
+              <h3 className="font-bold mb-2">
+                Features of <span className="text-blue-300">{selectedService.value}</span>
               </h3>
-              <ul className="list-disc list-inside text-sm text-zinc-200 space-y-1">
+              <ul className="list-disc list-inside space-y-1">
                 {selectedService.raw.Feature_1 && <li>{selectedService.raw.Feature_1}</li>}
                 {selectedService.raw.Feature_2 && <li>{selectedService.raw.Feature_2}</li>}
               </ul>
             </div>
           )}
 
-          {/* domain selection */}
+          {/* Domain Dropdown */}
           <div>
-            <label className="block text-sm font-mono font-medium text-blue-200">
-              Enter the Primary domain of your organization
+            <label className="block text-sm font-medium text-blue-100 mb-1">
+              Your Organization's Domain
             </label>
             <select
-              aria-placeholder='type'
               value={domain}
-              onChange={e => setDomain(e.target.value)}
+              onChange={(e) => setDomain(e.target.value)}
               required
-              className="mt-1 block font-mono w-full px-3 py-2 border rounded-md bg-zinc-50 text-gray-800"
+              className="w-full bg-white text-sm font-mono text-gray-800 px-3 py-2 rounded-md border border-gray-300"
             >
               <option value="">-- Select Domain --</option>
               <option value="education">Education</option>
@@ -125,42 +122,61 @@ function Suggestions() {
 
           <button
             type="submit"
-            className="w-full font-mono bg-[#5C6BC0] text-white py-2 px-4 rounded-md hover:bg-[#5C6BC0]/80 transition"
+            className="w-full bg-[#5C6BC0] hover:bg-[#4e5db3] text-white font-semibold py-2 px-4 rounded-md transition duration-200"
           >
-            Next
+            Get Suggestions
           </button>
         </form>
       </div>
 
-      {alternatives?.length == 0 && (
-        <div className="w-full max-w-md bg-zinc-700/80 p-6 rounded-lg shadow-sm shadow-zinc-300 text-gray-100">
-          No data avb
-        </div>
-      )}
-      {alternatives?.length > 0 && (
-        <div className="w-full max-w-md bg-zinc-700/80 p-6 rounded-lg shadow-sm shadow-zinc-300 text-gray-100">
-          <h2 className="text-xl font-serif font-bold mb-4 text-blue-200">Suggested Ethical Alternatives</h2>
-          <ul className="space-y-3 text-sm">
+      {/* Right: Suggestions */}
+      <div className="w-full max-w-xl">
+        {alternatives?.length === 0 && (
+          <div className="bg-white/5 border border-white/10 backdrop-blur-lg p-6 rounded-2xl shadow-xl text-center text-gray-300">
+            No ethical alternatives found.
+          </div>
+        )}
+        {alternatives?.length > 0 && (
+          <div className="space-y-6">
+            <h2 className="text-xl font-bold text-blue-200 font-serif mb-2">
+              Ethical Alternatives
+            </h2>
             {alternatives.map((alt, idx) => (
-              <li key={idx} className="bg-zinc-800/60 p-3 rounded-md border border-zinc-600">
-                <p className="font-mono text-blue-300">{alt.Service_Name}
-                  {alt.Score <= 10 && <span className='text-green-400'> ({alt.Score}) Yes</span>}
-                  {alt.Score > 10 && alt.Score <= 20 && <span className='text-yellow-400'> ({alt.Score}) Maybe</span>}
-                  {alt.Score > 20 && <span className='text-red-400'> ({alt.Score}) Avoid</span>}
+              <div
+                key={idx}
+                className="bg-white/5 border border-white/10 backdrop-blur-xl p-4 rounded-xl text-sm text-white space-y-2 shadow-md"
+              >
+                <p className="text-base font-mono font-semibold text-blue-300">
+                  {alt.Service_Name}
+                  {alt.Score <= 10 && (
+                    <span className="ml-2 px-2 py-0.5 text-xs rounded bg-green-500/20 text-green-300">
+                      ({alt.Score}) Ethical
+                    </span>
+                  )}
+                  {alt.Score > 10 && alt.Score <= 20 && (
+                    <span className="ml-2 px-2 py-0.5 text-xs rounded bg-yellow-500/20 text-yellow-300">
+                      ({alt.Score}) Caution
+                    </span>
+                  )}
+                  {alt.Score > 20 && (
+                    <span className="ml-2 px-2 py-0.5 text-xs rounded bg-red-500/20 text-red-400">
+                      ({alt.Score}) Avoid
+                    </span>
+                  )}
                 </p>
-                <p className="font-mono text-sm text-blue-200">{alt.Description}</p>
-                <p className="font-mono text-sm text-blue-500">
-                  Average Monthly Running Costs: ${alt.average_monthly_running_cost}
+                <p className="text-gray-300 font-mono">{alt.Description}</p>
+                <p className="text-blue-200 text-xs">
+                  Avg. Monthly Cost: ${alt.average_monthly_running_cost}
                 </p>
-                {alt.Feature_1 && <p className="text-zinc-200 mt-1">• {alt.Feature_1}</p>}
-                {alt.Feature_2 && <p className="text-zinc-200">• {alt.Feature_2}</p>}
-              </li>
+                {alt.Feature_1 && <p className="text-gray-200">• {alt.Feature_1}</p>}
+                {alt.Feature_2 && <p className="text-gray-200">• {alt.Feature_2}</p>}
+              </div>
             ))}
-          </ul>
-        </div>
-      )}
+          </div>
+        )}
+      </div>
     </div>
-  )
+  );
 }
 
-export default Suggestions
+export default Suggestions;
