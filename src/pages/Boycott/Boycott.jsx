@@ -21,7 +21,7 @@ const Boycott = () => {
     setResult(null);
 
     try {
-      const response = await fetch("https://hackforpalestine.onrender.com/search", {
+      const response = await fetch("https://hackforpalestineapi.onrender.com/search", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { SERVICES } from './data/services';
 
 // const BACKEND_BASE_URL = 'https://hackforpalestine.onrender.com';
-const BACKEND_BASE_URL = 'http://localhost:5000';
+const BACKEND_BASE_URL = 'https://hackforpalestineapi.onrender.com/';
 
 function Suggestions() {
   const [selectedService, setSelectedService] = useState(null);

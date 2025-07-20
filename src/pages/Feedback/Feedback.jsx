@@ -66,7 +66,7 @@ function Feedback() {
 
     try {
       // const response = await fetch('http://localhost:5000/feedback', {
-      const response = await fetch('https://hackforpalestine.onrender.com/feedback', {
+      const response = await fetch('https://hackforpalestineapi.onrender.com/feedback', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
