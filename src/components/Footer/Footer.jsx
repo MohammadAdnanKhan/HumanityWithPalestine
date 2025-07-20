@@ -1,6 +1,7 @@
 import React from "react";
 import logo from "../../assets/logo1.png";
 import { FaInstagram, FaGlobe, FaWhatsapp } from "react-icons/fa";
+import { NavLink } from "react-router-dom";
 
 function Footer() {
   return (
@@ -32,21 +33,21 @@ function Footer() {
           <h4 className="text-md font-semibold text-[#5C6BC0] font-serif mb-3">Explore</h4>
           <ul className="space-y-2 text-[#90A4AE] text-sm">
             {[
-              { label: "Home", href: "/" },
-              { label: "Boycott", href: "/boycott" },
-              { label: "MailProtest", href: "/mailprotest" },
-              { label: "Suggestions", href: "/suggestions" },
-              { label: "Donate", href: "/donate" },
-              { label: "About", href: "/about" },
-              { label: "Contact", href: "/feedback" },
+              { label: "Home", to: "/" },
+              { label: "Boycott", to: "/boycott" },
+              { label: "MailProtest", to: "/mailprotest" },
+              { label: "Suggestions", to: "/suggestions" },
+              { label: "Donate", to: "/donate" },
+              { label: "About", to: "/about" },
+              { label: "Contact", to: "/feedback" },
             ].map((link) => (
               <li key={link.label}>
-                <a
-                  href={link.href}
+                <NavLink
+                  to={link.to}
                   className="hover:text-white hover:drop-shadow-[0_0_6px_#5C6BC0] transition duration-200"
                 >
                   {link.label}
-                </a>
+                </NavLink>
               </li>
             ))}
           </ul>
