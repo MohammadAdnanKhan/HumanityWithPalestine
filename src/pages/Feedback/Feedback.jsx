@@ -62,7 +62,7 @@ function Feedback() {
       ...formData
     };
 
-    console.log('Submitted data:', feedbackObj);
+    // console.log('Submitted data:', feedbackObj);
 
     try {
       // const response = await fetch('http://localhost:5000/feedback', {
@@ -79,7 +79,7 @@ function Feedback() {
       }
 
       const result = await response.json();
-      console.log('Server response:', result);
+      // console.log('Server response:', result);
 
       // After successful submission
       setPage(3);

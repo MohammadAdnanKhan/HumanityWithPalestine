@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import AsyncSelect from 'react-select/async';
+import { SERVICES } from './data/services';
 
 // const BACKEND_BASE_URL = 'https://hackforpalestine.onrender.com';
 const BACKEND_BASE_URL = 'http://localhost:5000';
@@ -9,25 +9,10 @@ function Suggestions() {
   const [domain, setDomain] = useState('');
   const [alternatives, setAlternatives] = useState(null);
 
-  const loadOptions = async (inputValue) => {
-    if (inputValue.length < 3) return [];
-    try {
-      const res = await fetch(`${BACKEND_BASE_URL}/service?name=${encodeURIComponent(inputValue)}`);
-      const data = await res.json();
-
-      return data.map((s) => ({
-        label: `${s.Service_Name} (${s.Service_Type})`,
-        value: s.Service_Name,
-        raw: s,
-      }));
-    } catch (err) {
-      console.error('Error loading service suggestions:', err);
-      return [];
-    }
-  };
-
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    // console.log("selectedService", selectedService);
     try {
       const res = await fetch(`${BACKEND_BASE_URL}/service`, {
         method: 'POST',
@@ -35,8 +20,8 @@ function Suggestions() {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-          name: selectedService.raw.Service_Name,
-          type: selectedService.raw.Service_Type,
+          name: selectedService.Service_Name,
+          type: selectedService.Service_Type,
           domain,
         }),
       });
@@ -51,7 +36,7 @@ function Suggestions() {
   return (
     <div className="min-h-screen px-4 md:px-10 py-10 flex flex-col lg:flex-row gap-10 justify-center bg-[#101827]">
       {/* Left: Form */}
-      <div className="bg-white/5 border border-white/10 backdrop-blur-lg p-6 md:p-8 rounded-2xl shadow-xl w-full max-w-xl text-white">
+      <div className="bg-white/5 border border-white/10 backdrop-blur-lg p-6 md:p-8 rounded-2xl shadow-xl w-full max-w-xl h-fit text-white">
         <h1 className="text-2xl md:text-3xl font-serif font-bold text-blue-200 mb-2">
           Ethical Service Suggestions
         </h1>
@@ -65,37 +50,37 @@ function Suggestions() {
             <label className="block text-sm font-medium text-blue-100 mb-1">
               Product/Service to Divest From
             </label>
-            <AsyncSelect
-              cacheOptions
-              defaultOptions
-              loadOptions={loadOptions}
-              onChange={setSelectedService}
-              placeholder="Type at least 3 characters..."
-              className="text-sm text-black"
-              styles={{
-                control: (base) => ({
-                  ...base,
-                  backgroundColor: 'white',
-                  fontFamily: 'monospace',
-                  borderColor: '#cbd5e1',
-                }),
-                menu: (base) => ({
-                  ...base,
-                  zIndex: 20,
-                }),
-              }}
-            />
+            <select
+              value={
+                selectedService
+                  ? SERVICES.findIndex(
+                    s =>
+                      s.Service_Name === selectedService.Service_Name &&
+                      s.Service_Type === selectedService.Service_Type
+                  ) : ""
+              }
+              onChange={(e) => setSelectedService(SERVICES[Number(e.target.value)])}
+              required
+              className="w-full bg-white text-sm font-mono text-gray-800 px-3 py-2 rounded-md border border-gray-300"
+            >
+              <option value="">-- Select Service --</option>
+              {SERVICES.map((s, idx) => (
+                <option key={idx} value={idx}>
+                  {s.Service_Name} ({s.Service_Type})
+                </option>
+              ))}
+            </select>
           </div>
 
           {/* Display Features */}
-          {(selectedService?.raw?.Feature_1 || selectedService?.raw?.Feature_2) && (
+          {(selectedService?.Top_B_Feature_1 || selectedService?.Top_B_Feature_2) && (
             <div className="bg-zinc-800/60 border border-zinc-600 p-4 rounded-lg text-sm text-gray-200">
               <h3 className="font-bold mb-2">
-                Features of <span className="text-blue-300">{selectedService.value}</span>
+                Features of <span className="text-blue-300">{selectedService.Service_Name}</span>
               </h3>
               <ul className="list-disc list-inside space-y-1">
-                {selectedService.raw.Feature_1 && <li>{selectedService.raw.Feature_1}</li>}
-                {selectedService.raw.Feature_2 && <li>{selectedService.raw.Feature_2}</li>}
+                {selectedService.Top_B_Feature_1 && <li>{selectedService.Top_B_Feature_1}</li>}
+                {selectedService.Top_B_Feature_2 && <li>{selectedService.Top_B_Feature_2}</li>}
               </ul>
             </div>
           )}
@@ -122,7 +107,11 @@ function Suggestions() {
 
           <button
             type="submit"
-            className="w-full bg-[#5C6BC0] hover:bg-[#4e5db3] text-white font-semibold py-2 px-4 rounded-md transition duration-200"
+            disabled={!selectedService || !domain}
+            className={`w-full bg-[#5C6BC0] hover:bg-[#4e5db3] text-white font-semibold py-2 px-4 rounded-md transition duration-200 ${(!selectedService || !domain)
+              ? 'cursor-not-allowed'
+              : 'cursor-pointer'
+              }`}
           >
             Get Suggestions
           </button>
