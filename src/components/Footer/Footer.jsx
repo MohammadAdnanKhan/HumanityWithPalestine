@@ -9,16 +9,28 @@ function Footer() {
 
   useEffect(() => {
     const fetchVisitors = async () => {
-      try {
-        const res = await fetch(`${BACKEND_URL}/visits`);
-        const data = await res.json();
-        // console.log(data);
-        if (data.total_visits) {
-          setVisitors(data.total_visits);
-        }
-      } catch (error) {
-        console.error("Err occurred while setting up visitors", error);
-      }
+      const counter = new Counter({
+        workspace: 'test' // Replace with your workspace name
+      });
+      // Increment the view count when the page loads
+      counter.up('test') // replace this also
+        .then(result => {
+          console.log(result);
+          setVisitors(result.data.up_count);
+        })
+        .catch(async (error) => {
+          console.error('Error tracking using API:', error);
+          console.log("Falling back to /visits");
+          try {
+            const res = await fetch(`${BACKEND_URL}/visits`);
+            const data = await res.json();
+            if (data.total_visits !== undefined) {
+              setVisitors(data.total_visits);
+            }
+          } catch (error) {
+            console.error("Err occurred while setting up visitors", error);
+          }
+        });
     };
 
     fetchVisitors();

@@ -5,15 +5,15 @@ export default function WakeBackend() {
   useEffect(() => {
     const wakeUpBackend = async () => {
       try {
-        const visitor_id = localStorage.getItem('visitor_id') || null;
-        if (visitor_id !== null) return;
+        // const visitor_id = localStorage.getItem('visitor_id') || null;
+        // if (visitor_id !== null) return;
 
         const res = await fetch(`${BACKEND_URL}/visits`, {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json'
           },
-          body: JSON.stringify({ visitor_id })
+          body: JSON.stringify({ visitor_id: null })
         });
 
         const data = await res.json();
