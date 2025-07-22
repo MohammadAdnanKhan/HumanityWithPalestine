@@ -4,20 +4,21 @@ import { FaInstagram, FaGlobe, FaWhatsapp } from "react-icons/fa";
 import { NavLink } from "react-router-dom";
 import BACKEND_URL from "../../pages/constants";
 
+
 function Footer() {
   const [visitors, setVisitors] = useState(null);
 
   useEffect(() => {
     const fetchVisitors = async () => {
       try {
-        const res = await fetch(`${BACKEND_URL}/visits`);
+        const res = await fetch("https://api.counterapi.dev/v1/vists/vists/up");
         const data = await res.json();
-        // console.log(data);
-        if (data.total_visits) {
-          setVisitors(data.total_visits);
+
+        if (data?.count !== undefined) {
+          setVisitors(data.count);
         }
       } catch (error) {
-        console.error("Err occurred while setting up visitors", error);
+        console.error("Error fetching visitor count from CounterAPI:", error);
       }
     };
 
@@ -39,7 +40,7 @@ function Footer() {
             <div className="mx-auto mt-6 w-fit rounded-xl border-2 border-indigo-300 bg-indigo-800 px-6 py-3 text-center text-slate-200 shadow-md">
               <span className="mr-2 text-lg font-medium tracking-wide">Visitors:</span>
               <span className="inline-block rounded bg-indigo-900 px-3 py-1 text-slate-100 text-sm font-semibold">
-                {visitors}
+                Total visitors: {visitors !== null ? visitors : "Loading..."}
               </span>
             </div>
           )}
