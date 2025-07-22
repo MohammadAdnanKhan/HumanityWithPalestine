@@ -5,6 +5,7 @@ import TrustField from './components/TrustField'
 import UiField from './components/UiField'
 import validateForm from './utils/validateForm'
 import BACKEND_URL from '../constants'
+const SUPPORT_EMAIL = "humanitywithpalestine@proton.me";
 
 const initialFormData = {
   name: '',
@@ -122,7 +123,7 @@ function Feedback() {
 
             <button
               type="submit"
-              className="w-full font-mono bg-[#5C6BC0] text-white py-2 px-4 rounded-md hover:bg-[#5C6BC0]/80 transition"
+              className="w-full font-mono cursor-not-allowed bg-[#5C6BC0] text-white py-2 px-4 rounded-md hover:bg-[#5C6BC0]/80 transition"
             >
               Next
             </button>
@@ -221,6 +222,23 @@ function Feedback() {
             </button>
           </form>
         )}
+        <div className="mt-6 p-4 border border-[#5C6BC0]/30 bg-zinc-800/50 rounded-md text-xs text-blue-100 text-center font-mono">
+        <p className="mb-1">
+          ⚠️ Having trouble submitting the form?
+        </p>
+        <p>
+          You can always reach us directly at{" "}
+          <a
+            href={`mailto:${SUPPORT_EMAIL}`}
+            className="text-[#EF9A9A] hover:underline font-semibold"
+          >
+            {SUPPORT_EMAIL}
+          </a>
+        </p>
+        <p className="italic text-[11px] text-gray-400 mt-1">
+          We'd love to hear from you since no issue is too small 🍉
+        </p>
+      </div>
 
         {page === 3 && (
           <p className="text-green-600 font-serif font-medium">
