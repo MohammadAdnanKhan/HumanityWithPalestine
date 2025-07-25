@@ -11,7 +11,15 @@ function Education({ csvUrl }) {
     Papa.parse(csvUrl, {
       download: true,
       header: true,
-      complete: (results) => setArticles(results.data),
+      complete: (results) => {
+      const cleaned = results.data.filter(
+        (row) =>
+          row.title?.trim() &&
+          row.description?.trim() &&
+          row.img?.trim()
+      );
+      setArticles(cleaned);
+    },
       error: (err) => console.error("CSV Parse Error:", err),
     });
   }, [csvUrl]);
