@@ -11,6 +11,8 @@ import Feedback from './pages/Feedback/Feedback.jsx';
 import MailProtest from './pages/MailProtest/MailProtest.jsx';
 import Suggestions from './pages/Suggestions/Suggestions.jsx';
 import NotFound from './pages/Notfound/Notfound.jsx';
+import Accept from './pages/Accept/accept.jsx';
+import Neutral from './pages/Neutral/neutral.jsx';
 import './index.css';
 
 const router = createBrowserRouter(
@@ -24,6 +26,8 @@ const router = createBrowserRouter(
       <Route path="feedback" element={<Feedback />} />   
       <Route path="mailprotest"  element={<MailProtest csvUrl="/mail.csv" />} />
       <Route path="suggestions" element={<Suggestions />} /> 
+      <Route path="neutral" element={<Neutral />} />                
+      <Route path="accept" element={<Accept />} />                
       <Route path="*" element={<NotFound />} />           
     </Route>
   )
